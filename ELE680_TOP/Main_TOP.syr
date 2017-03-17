@@ -1,0 +1,848 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> Reading design: Main_TOP.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Main_TOP.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Main_TOP"
+Output Format                      : NGC
+Target Device                      : xc6slx9-3-tqg144
+
+---- Source Options
+Top Module Name                    : Main_TOP
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\ipcore_dir\DCM_block.vhd" into library work
+Parsing entity <DCM_block>.
+Parsing architecture <xilinx> of entity <dcm_block>.
+Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_ctrlr.vhd" into library work
+Parsing entity <Main_ctrlr>.
+Parsing architecture <Behavioral> of entity <main_ctrlr>.
+Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\ipcore_dir\BRAM.vhd" into library work
+Parsing entity <BRAM>.
+Parsing architecture <BRAM_a> of entity <bram>.
+Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\FTDI_Block.vhd" into library work
+Parsing entity <FTDI_Block>.
+Parsing architecture <Behavioral> of entity <ftdi_block>.
+Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\DAC_Block.vhd" into library work
+Parsing entity <DAC_Block>.
+Parsing architecture <Behavioral> of entity <dac_block>.
+Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\BRAM_ctrlr.vhd" into library work
+Parsing entity <BRAM_ctrlr>.
+Parsing architecture <Behavioral> of entity <bram_ctrlr>.
+Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" into library work
+Parsing entity <Main_TOP>.
+Parsing architecture <Behavioral> of entity <main_top>.
+WARNING:HDLCompiler:946 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" Line 153: Actual for formal port c0 is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" Line 154: Actual for formal port c1 is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" Line 158: Actual for formal port r is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" Line 168: Actual for formal port reset is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" Line 213: Actual for formal port rstb is neither a static name nor a globally static expression
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <Main_TOP> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <DCM_block> (architecture <xilinx>) from library <work>.
+
+Elaborating entity <FTDI_Block> (architecture <Behavioral>) with generics from library <work>.
+
+Elaborating entity <Main_ctrlr> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:1127 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_ctrlr.vhd" Line 190: Assignment to fdiv_s ignored, since the identifier is never used
+
+Elaborating entity <BRAM> (architecture <BRAM_a>) from library <work>.
+
+Elaborating entity <BRAM_ctrlr> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\BRAM_ctrlr.vhd" Line 142. Case statement is complete. others clause is never selected
+
+Elaborating entity <DAC_Block> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Main_TOP>.
+    Related source file is "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd".
+        clk_period = 10
+INFO:Xst:3210 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" line 161: Output port <LOCKED> of the instance <U1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" line 170: Output port <DEBUG_o> of the instance <U2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" line 170: Output port <LED_o> of the instance <U2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" line 187: Output port <LED_o> of the instance <U3> is unconnected or connected to loadless signal.
+INFO:Xst:2774 - HDL ADVISOR - KEEP property attached to signal D_io_s may hinder XST clustering optimizations.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <Main_TOP> synthesized.
+
+Synthesizing Unit <DCM_block>.
+    Related source file is "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\ipcore_dir\DCM_block.vhd".
+    Summary:
+	no macro.
+Unit <DCM_block> synthesized.
+
+Synthesizing Unit <FTDI_Block>.
+    Related source file is "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\FTDI_Block.vhd".
+        clk_period = 10
+WARNING:Xst:653 - Signal <DEBUG_o> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <LED_o> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 2-bit register for signal <write_state>.
+    Found 1-bit register for signal <ft_wr_done_o>.
+    Found 8-bit register for signal <D_io_s>.
+    Found 8-bit register for signal <counter_s>.
+    Found 1-bit register for signal <RD_o>.
+    Found 1-bit register for signal <ft_rd_done_o>.
+    Found 1-bit register for signal <WR_o>.
+    Found 2-bit register for signal <read_state>.
+    Found finite state machine <FSM_0> for signal <write_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 6                                              |
+    | Outputs            | 4                                              |
+    | Clock              | CLK_i (rising_edge)                            |
+    | Reset              | RST_i_INV_10_o (positive)                      |
+    | Reset type         | synchronous                                    |
+    | Reset State        | write_init                                     |
+    | Power Up State     | write_init                                     |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <read_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 5                                              |
+    | Outputs            | 5                                              |
+    | Clock              | CLK_i (rising_edge)                            |
+    | Reset              | RST_i_INV_10_o (positive)                      |
+    | Reset type         | synchronous                                    |
+    | Reset State        | read_init                                      |
+    | Power Up State     | read_init                                      |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit adder for signal <counter_s[7]_GND_11_o_add_29_OUT> created at line 1253.
+    Found 8-bit 4-to-1 multiplexer for signal <read_state[1]_D_io_s[7]_wide_mux_13_OUT> created at line 70.
+    Found 8-bit 4-to-1 multiplexer for signal <read_state[1]_counter_s[7]_wide_mux_14_OUT> created at line 70.
+    Found 1-bit 4-to-1 multiplexer for signal <read_state[1]_RD_o_Mux_15_o> created at line 70.
+    Found 1-bit 4-to-1 multiplexer for signal <write_state[1]_read_state[1]_Mux_33_o> created at line 103.
+    Found 8-bit 4-to-1 multiplexer for signal <write_state[1]_counter_s[7]_wide_mux_35_OUT> created at line 103.
+    Found 8-bit 4-to-1 multiplexer for signal <write_state[1]_read_state[1]_wide_mux_37_OUT> created at line 103.
+    Found 1-bit tristate buffer for signal <D_ft_io<7>> created at line 146
+    Found 1-bit tristate buffer for signal <D_ft_io<6>> created at line 146
+    Found 1-bit tristate buffer for signal <D_ft_io<5>> created at line 146
+    Found 1-bit tristate buffer for signal <D_ft_io<4>> created at line 146
+    Found 1-bit tristate buffer for signal <D_ft_io<3>> created at line 146
+    Found 1-bit tristate buffer for signal <D_ft_io<2>> created at line 146
+    Found 1-bit tristate buffer for signal <D_ft_io<1>> created at line 146
+    Found 1-bit tristate buffer for signal <D_ft_io<0>> created at line 146
+    Found 1-bit tristate buffer for signal <D_io<7>> created at line 147
+    Found 1-bit tristate buffer for signal <D_io<6>> created at line 147
+    Found 1-bit tristate buffer for signal <D_io<5>> created at line 147
+    Found 1-bit tristate buffer for signal <D_io<4>> created at line 147
+    Found 1-bit tristate buffer for signal <D_io<3>> created at line 147
+    Found 1-bit tristate buffer for signal <D_io<2>> created at line 147
+    Found 1-bit tristate buffer for signal <D_io<1>> created at line 147
+    Found 1-bit tristate buffer for signal <D_io<0>> created at line 147
+    Found 8-bit comparator greater for signal <counter_s[7]_GND_11_o_LessThan_4_o> created at line 82
+    Found 8-bit comparator greater for signal <counter_s[7]_GND_11_o_LessThan_7_o> created at line 88
+    Found 8-bit comparator greater for signal <counter_s[7]_GND_11_o_LessThan_10_o> created at line 95
+    Found 8-bit comparator greater for signal <counter_s[7]_PWR_11_o_LessThan_25_o> created at line 116
+    Found 8-bit comparator greater for signal <counter_s[7]_GND_11_o_LessThan_28_o> created at line 129
+    Found 8-bit comparator greater for signal <counter_s[7]_GND_11_o_LessThan_31_o> created at line 136
+    Found 8-bit comparator lessequal for signal <n0061> created at line 146
+    Found 8-bit comparator greater for signal <counter_s[7]_GND_11_o_LessThan_49_o> created at line 146
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  20 D-type flip-flop(s).
+	inferred   8 Comparator(s).
+	inferred  15 Multiplexer(s).
+	inferred  16 Tristate(s).
+	inferred   2 Finite State Machine(s).
+Unit <FTDI_Block> synthesized.
+
+Synthesizing Unit <Main_ctrlr>.
+    Related source file is "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_ctrlr.vhd".
+    Found 12-bit register for signal <debug_s>.
+    Found 4-bit register for signal <Top_State>.
+    Found 1-bit register for signal <start_byte_read>.
+    Found 3-bit register for signal <Sub_State>.
+    Found 1-bit register for signal <last_ft_rd_done_i>.
+    Found 16-bit register for signal <temp_buf_2_bytes>.
+    Found 1-bit register for signal <smp_rdy_o>.
+    Found 1-bit register for signal <ft_wr_en_o>.
+    Found 15-bit register for signal <wr_addr_s>.
+    Found 8-bit register for signal <D_io_s>.
+    Found 8-bit register for signal <nb_byte>.
+    Found 14-bit register for signal <D_mem_o>.
+    Found 15-bit register for signal <max_rd_addr_o>.
+    Found 1-bit register for signal <GEN_RUN_s>.
+    Found 4-bit register for signal <att_o>.
+    Found 14-bit register for signal <inc_rd_addr_o>.
+    Found 12-bit register for signal <led_s>.
+INFO:Xst:1799 - State error is never reached in FSM <Top_State>.
+    Found finite state machine <FSM_2> for signal <Top_State>.
+    -----------------------------------------------------------------------
+    | States             | 13                                             |
+    | Transitions        | 43                                             |
+    | Inputs             | 12                                             |
+    | Outputs            | 7                                              |
+    | Clock              | CLK_i (rising_edge)                            |
+    | Reset              | RST_i_INV_21_o (positive)                      |
+    | Reset type         | synchronous                                    |
+    | Reset State        | idle_top                                       |
+    | Power Up State     | idle_top                                       |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_3> for signal <Sub_State>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 24                                             |
+    | Inputs             | 11                                             |
+    | Outputs            | 6                                              |
+    | Clock              | CLK_i (rising_edge)                            |
+    | Reset              | RST_i_INV_21_o (positive)                      |
+    | Reset type         | synchronous                                    |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit adder for signal <D_io[7]_GND_28_o_add_45_OUT> created at line 1241.
+    Found 15-bit adder for signal <wr_addr_s[14]_GND_28_o_add_54_OUT> created at line 1241.
+    Found 8-bit subtractor for signal <GND_28_o_GND_28_o_sub_54_OUT<7:0>> created at line 1308.
+    Found 1-bit tristate buffer for signal <D_io<7>> created at line 286
+    Found 1-bit tristate buffer for signal <D_io<6>> created at line 286
+    Found 1-bit tristate buffer for signal <D_io<5>> created at line 286
+    Found 1-bit tristate buffer for signal <D_io<4>> created at line 286
+    Found 1-bit tristate buffer for signal <D_io<3>> created at line 286
+    Found 1-bit tristate buffer for signal <D_io<2>> created at line 286
+    Found 1-bit tristate buffer for signal <D_io<1>> created at line 286
+    Found 1-bit tristate buffer for signal <D_io<0>> created at line 286
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 123 D-type flip-flop(s).
+	inferred  27 Multiplexer(s).
+	inferred   8 Tristate(s).
+	inferred   2 Finite State Machine(s).
+Unit <Main_ctrlr> synthesized.
+
+Synthesizing Unit <BRAM_ctrlr>.
+    Related source file is "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\BRAM_ctrlr.vhd".
+    Found 1-bit register for signal <smp_rdy_past>.
+    Found 1-bit register for signal <mem_wr_ack_s>.
+    Found 1-bit register for signal <wr_en_s>.
+    Found 15-bit register for signal <wr_addr_s>.
+    Found 14-bit register for signal <D_SRAM_o_s>.
+    Found 14-bit register for signal <D_DAC_s>.
+    Found 15-bit register for signal <read_addr_s>.
+    Found 2-bit register for signal <mem_read_state>.
+    Found 15-bit register for signal <future_read_addr_s>.
+    Found 2-bit register for signal <mem_write_state>.
+    Found finite state machine <FSM_4> for signal <mem_read_state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 2                                              |
+    | Clock              | CLK_i (rising_edge)                            |
+    | Power Up State     | dac_gen_stop                                   |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+INFO:Xst:1799 - State error is never reached in FSM <mem_write_state>.
+    Found finite state machine <FSM_5> for signal <mem_write_state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 4                                              |
+    | Clock              | CLK_i (rising_edge)                            |
+    | Reset              | RST_i_INV_39_o (positive)                      |
+    | Reset type         | synchronous                                    |
+    | Reset State        | idle                                           |
+    | Power Up State     | idle                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 15-bit adder for signal <read_addr_s[14]_GND_38_o_add_11_OUT> created at line 115.
+    Found 15-bit subtractor for signal <GND_38_o_GND_38_o_sub_14_OUT<14:0>> created at line 121.
+    Found 14-bit 3-to-1 multiplexer for signal <mem_read_state[1]_X_36_o_wide_mux_17_OUT> created at line 100.
+    Found 15-bit comparator greater for signal <future_read_addr_s[14]_max_rd_addr_i[14]_LessThan_13_o> created at line 117
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  76 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   5 Multiplexer(s).
+	inferred   2 Finite State Machine(s).
+Unit <BRAM_ctrlr> synthesized.
+
+Synthesizing Unit <DAC_Block>.
+    Related source file is "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\DAC_Block.vhd".
+WARNING:Xst:647 - Input <ATT_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 12-bit register for signal <D_DAC_s<11:0>>.
+    Summary:
+	inferred  12 D-type flip-flop(s).
+Unit <DAC_Block> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 15-bit adder                                          : 2
+ 15-bit subtractor                                     : 1
+ 8-bit adder                                           : 1
+ 8-bit addsub                                          : 1
+# Registers                                            : 30
+ 1-bit register                                        : 12
+ 12-bit register                                       : 3
+ 14-bit register                                       : 4
+ 15-bit register                                       : 5
+ 16-bit register                                       : 1
+ 4-bit register                                        : 1
+ 8-bit register                                        : 4
+# Comparators                                          : 9
+ 15-bit comparator greater                             : 1
+ 8-bit comparator greater                              : 7
+ 8-bit comparator lessequal                            : 1
+# Multiplexers                                         : 48
+ 1-bit 2-to-1 multiplexer                              : 21
+ 1-bit 4-to-1 multiplexer                              : 2
+ 12-bit 2-to-1 multiplexer                             : 1
+ 14-bit 2-to-1 multiplexer                             : 1
+ 14-bit 3-to-1 multiplexer                             : 1
+ 15-bit 2-to-1 multiplexer                             : 7
+ 16-bit 2-to-1 multiplexer                             : 2
+ 8-bit 2-to-1 multiplexer                              : 9
+ 8-bit 4-to-1 multiplexer                              : 4
+# Tristates                                            : 24
+ 1-bit tristate buffer                                 : 24
+# FSMs                                                 : 6
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/BRAM.ngc>.
+Loading core <BRAM> for timing and area information for instance <U4>.
+WARNING:Xst:1710 - FF/Latch <debug_s_0> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <debug_s_1> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <debug_s_2> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <debug_s_3> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <debug_s_4> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <debug_s_5> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <debug_s_6> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <debug_s_7> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <debug_s_8> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <debug_s_9> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <debug_s_10> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <debug_s_11> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 15-bit adder                                          : 2
+ 15-bit subtractor                                     : 1
+ 8-bit adder                                           : 1
+ 8-bit addsub                                          : 1
+# Registers                                            : 231
+ Flip-Flops                                            : 231
+# Comparators                                          : 9
+ 15-bit comparator greater                             : 1
+ 8-bit comparator greater                              : 7
+ 8-bit comparator lessequal                            : 1
+# Multiplexers                                         : 83
+ 1-bit 2-to-1 multiplexer                              : 59
+ 1-bit 4-to-1 multiplexer                              : 2
+ 12-bit 2-to-1 multiplexer                             : 1
+ 14-bit 3-to-1 multiplexer                             : 1
+ 15-bit 2-to-1 multiplexer                             : 7
+ 16-bit 2-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 8
+ 8-bit 4-to-1 multiplexer                              : 4
+# FSMs                                                 : 6
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <led_s_11> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_s_10> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_s_9> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_s_8> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_s_7> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_s_6> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_s_5> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_s_4> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_s_3> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_s_2> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_s_1> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <led_s_0> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <debug_s_11> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <debug_s_10> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <debug_s_9> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <debug_s_8> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <debug_s_7> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <debug_s_6> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <debug_s_5> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <debug_s_4> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <debug_s_3> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <debug_s_2> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <debug_s_1> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <debug_s_0> (without init value) has a constant value of 0 in block <Main_ctrlr>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <U2/FSM_0> on signal <write_state[1:2]> with gray encoding.
+----------------------------
+ State          | Encoding
+----------------------------
+ write_init     | 00
+ wait_for_write | 01
+ write_time     | 11
+ write_done     | 10
+----------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <U2/FSM_1> on signal <read_state[1:2]> with user encoding.
+--------------------------
+ State        | Encoding
+--------------------------
+ read_init    | 00
+ wait_for_dat | 01
+ read_dat     | 10
+ read_done    | 11
+--------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <U3/FSM_2> on signal <Top_State[1:4]> with user encoding.
+------------------------------
+ State            | Encoding
+------------------------------
+ idle_top         | 0000
+ start            | 0001
+ read_start       | 0010
+ read_conf        | 0011
+ wr_addr_top      | 0100
+ data_load_top    | 0101
+ max_rd_addr_top  | 0110
+ gen_stop_top     | 0111
+ gen_start_top    | 1000
+ sig_att_top      | 1001
+ jump_rd_addr_top | 1010
+ f_div_top        | 1011
+ error            | unreached
+------------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <U3/FSM_3> on signal <Sub_State[1:3]> with user encoding.
+-------------------------
+ State       | Encoding
+-------------------------
+ idle        | 000
+ read_qty    | 001
+ read_byte1  | 010
+ read_byte2  | 011
+ wr_confirm  | 100
+ mem_write   | 101
+ inc_wr_addr | 110
+ error       | 111
+-------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <U5/FSM_4> on signal <mem_read_state[1:2]> with user encoding.
+--------------------------
+ State        | Encoding
+--------------------------
+ dac_gen_stop | 00
+ dac_gen_run  | 01
+ sram_to_dac  | 10
+--------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <U5/FSM_5> on signal <mem_write_state[1:2]> with user encoding.
+---------------------------
+ State         | Encoding
+---------------------------
+ idle          | 00
+ send_read_req | 01
+ write_bram    | 10
+ error         | unreached
+---------------------------
+WARNING:Xst:2677 - Node <temp_buf_2_bytes_15> of sequential type is unconnected in block <Main_ctrlr>.
+INFO:Xst:1901 - Instance U1/pll_base_inst in unit U1/pll_base_inst of type PLL_BASE has been replaced by PLL_ADV
+INFO:Xst:2261 - The FF/Latch <mem_wr_ack_s> in Unit <BRAM_ctrlr> is equivalent to the following FF/Latch, which will be removed : <wr_en_s_0> 
+WARNING:Xst:2040 - Unit Main_TOP: 8 multi-source signals are replaced by logic (pull-up yes): D_io_s<0>, D_io_s<1>, D_io_s<2>, D_io_s<3>, D_io_s<4>, D_io_s<5>, D_io_s<6>, D_io_s<7>.
+WARNING:Xst:2042 - Unit Main_ctrlr: 8 internal tristates are replaced by logic (pull-up yes): D_io<0>, D_io<1>, D_io<2>, D_io<3>, D_io<4>, D_io<5>, D_io<6>, D_io<7>.
+
+Optimizing unit <Main_TOP> ...
+WARNING:Xst:1710 - FF/Latch <U2/counter_s_0> (without init value) has a constant value of 0 in block <Main_TOP>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <BRAM_ctrlr> ...
+
+Optimizing unit <DAC_Block> ...
+WARNING:Xst:2677 - Node <U3/att_o_3> of sequential type is unconnected in block <Main_TOP>.
+WARNING:Xst:2677 - Node <U3/att_o_2> of sequential type is unconnected in block <Main_TOP>.
+WARNING:Xst:2677 - Node <U3/att_o_1> of sequential type is unconnected in block <Main_TOP>.
+WARNING:Xst:2677 - Node <U3/att_o_0> of sequential type is unconnected in block <Main_TOP>.
+WARNING:Xst:2677 - Node <U5/D_DAC_s_13> of sequential type is unconnected in block <Main_TOP>.
+WARNING:Xst:2677 - Node <U5/D_DAC_s_12> of sequential type is unconnected in block <Main_TOP>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Main_TOP, actual ratio is 8.
+FlipFlop U2/read_state_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop U2/read_state_FSM_FFd2 has been replicated 1 time(s)
+FlipFlop U3/Sub_State_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop U3/Sub_State_FSM_FFd2 has been replicated 1 time(s)
+FlipFlop U3/Sub_State_FSM_FFd3 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 218
+ Flip-Flops                                            : 218
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Main_TOP.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 522
+#      GND                         : 2
+#      INV                         : 5
+#      LUT1                        : 14
+#      LUT2                        : 40
+#      LUT3                        : 42
+#      LUT4                        : 62
+#      LUT5                        : 71
+#      LUT6                        : 152
+#      MUXCY                       : 50
+#      MUXF7                       : 28
+#      MUXF8                       : 9
+#      VCC                         : 2
+#      XORCY                       : 45
+# FlipFlops/Latches                : 237
+#      FD                          : 9
+#      FDE                         : 183
+#      FDR                         : 30
+#      FDRE                        : 14
+#      ODDR2                       : 1
+# RAMS                             : 26
+#      RAMB16BWER                  : 26
+# Clock Buffers                    : 2
+#      BUFG                        : 2
+# IO Buffers                       : 51
+#      IBUF                        : 3
+#      IBUFG                       : 1
+#      IOBUF                       : 8
+#      OBUF                        : 39
+# Others                           : 1
+#      PLL_ADV                     : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             237  out of  11440     2%  
+ Number of Slice LUTs:                  386  out of   5720     6%  
+    Number used as Logic:               386  out of   5720     6%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    474
+   Number with an unused Flip Flop:     237  out of    474    50%  
+   Number with an unused LUT:            88  out of    474    18%  
+   Number of fully used LUT-FF pairs:   149  out of    474    31%  
+   Number of unique control sets:        16
+
+IO Utilization: 
+ Number of IOs:                          51
+ Number of bonded IOBs:                  51  out of    102    50%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:               26  out of     32    81%  
+    Number using Block RAM only:         26
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of PLL_ADVs:                      1  out of      2    50%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+U1/pll_base_inst/CLKOUT0           | BUFG                   | 263   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.765ns (Maximum Frequency: 209.886MHz)
+   Minimum input arrival time before clock: 6.781ns
+   Maximum output required time after clock: 8.063ns
+   Maximum combinational path delay: 10.080ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'U1/pll_base_inst/CLKOUT0'
+  Clock period: 4.765ns (frequency: 209.886MHz)
+  Total number of paths / destination ports: 5752 / 1326
+-------------------------------------------------------------------------
+Delay:               4.765ns (Levels of Logic = 4)
+  Source:            U2/read_state_FSM_FFd1_1 (FF)
+  Destination:       U3/nb_byte_7 (FF)
+  Source Clock:      U1/pll_base_inst/CLKOUT0 rising
+  Destination Clock: U1/pll_base_inst/CLKOUT0 rising
+
+  Data Path: U2/read_state_FSM_FFd1_1 to U3/nb_byte_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.447   0.721  U2/read_state_FSM_FFd1_1 (U2/read_state_FSM_FFd1_1)
+     LUT3:I1->O            9   0.203   0.934  D_io_s<0>LogicTrst11_1 (D_io_s<0>LogicTrst111)
+     LUT6:I4->O           20   0.203   1.093  D_io_s<1>LogicTrst1 (D_io_s<1>)
+     LUT6:I5->O            3   0.205   0.651  U3/Mmux_Sub_State[2]_nb_byte[7]_wide_mux_64_OUT_rs_xor<4>121 (U3/Mmux_Sub_State[2]_nb_byte[7]_wide_mux_64_OUT_rs_xor<4>12)
+     LUT2:I1->O            1   0.205   0.000  U3/Mmux_Sub_State[2]_nb_byte[7]_wide_mux_64_OUT_rs_xor<4>11 (U3/Sub_State[2]_nb_byte[7]_wide_mux_64_OUT<4>)
+     FDE:D                     0.102          U3/nb_byte_4
+    ----------------------------------------
+    Total                      4.765ns (1.365ns logic, 3.399ns route)
+                                       (28.6% logic, 71.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'U1/pll_base_inst/CLKOUT0'
+  Total number of paths / destination ports: 449 / 286
+-------------------------------------------------------------------------
+Offset:              6.781ns (Levels of Logic = 5)
+  Source:            RST_i (PAD)
+  Destination:       U3/nb_byte_7 (FF)
+  Destination Clock: U1/pll_base_inst/CLKOUT0 rising
+
+  Data Path: RST_i to U3/nb_byte_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            78   1.222   1.961  RST_i_IBUF (RST_i_IBUF)
+     LUT3:I0->O            9   0.205   0.934  D_io_s<0>LogicTrst11_1 (D_io_s<0>LogicTrst111)
+     LUT6:I4->O           20   0.203   1.093  D_io_s<1>LogicTrst1 (D_io_s<1>)
+     LUT6:I5->O            3   0.205   0.651  U3/Mmux_Sub_State[2]_nb_byte[7]_wide_mux_64_OUT_rs_xor<4>121 (U3/Mmux_Sub_State[2]_nb_byte[7]_wide_mux_64_OUT_rs_xor<4>12)
+     LUT2:I1->O            1   0.205   0.000  U3/Mmux_Sub_State[2]_nb_byte[7]_wide_mux_64_OUT_rs_xor<4>11 (U3/Sub_State[2]_nb_byte[7]_wide_mux_64_OUT<4>)
+     FDE:D                     0.102          U3/nb_byte_4
+    ----------------------------------------
+    Total                      6.781ns (2.142ns logic, 4.639ns route)
+                                       (31.6% logic, 68.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'U1/pll_base_inst/CLKOUT0'
+  Total number of paths / destination ports: 874 / 34
+-------------------------------------------------------------------------
+Offset:              8.063ns (Levels of Logic = 5)
+  Source:            U2/read_state_FSM_FFd1_1 (FF)
+  Destination:       LED_o<11> (PAD)
+  Source Clock:      U1/pll_base_inst/CLKOUT0 rising
+
+  Data Path: U2/read_state_FSM_FFd1_1 to LED_o<11>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.447   0.721  U2/read_state_FSM_FFd1_1 (U2/read_state_FSM_FFd1_1)
+     LUT3:I1->O            9   0.203   0.934  D_io_s<0>LogicTrst11_1 (D_io_s<0>LogicTrst111)
+     LUT6:I4->O            6   0.203   1.089  D_io_s<6>LogicTrst1 (D_io_s<6>)
+     LUT5:I0->O           12   0.203   0.909  U3/_n0451_inv111 (U3/_n0451_inv11)
+     LUT5:I4->O            1   0.205   0.579  Mmux_LED_o111 (LED_o_8_OBUF)
+     OBUF:I->O                 2.571          LED_o_8_OBUF (LED_o<8>)
+    ----------------------------------------
+    Total                      8.063ns (3.832ns logic, 4.231ns route)
+                                       (47.5% logic, 52.5% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 200 / 20
+-------------------------------------------------------------------------
+Delay:               10.080ns (Levels of Logic = 6)
+  Source:            RST_i (PAD)
+  Destination:       LED_o<11> (PAD)
+
+  Data Path: RST_i to LED_o<11>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            78   1.222   1.961  RST_i_IBUF (RST_i_IBUF)
+     LUT3:I0->O            9   0.205   0.934  D_io_s<0>LogicTrst11_1 (D_io_s<0>LogicTrst111)
+     LUT6:I4->O            6   0.203   1.089  D_io_s<6>LogicTrst1 (D_io_s<6>)
+     LUT5:I0->O           12   0.203   0.909  U3/_n0451_inv111 (U3/_n0451_inv11)
+     LUT5:I4->O            1   0.205   0.579  Mmux_LED_o111 (LED_o_8_OBUF)
+     OBUF:I->O                 2.571          LED_o_8_OBUF (LED_o<8>)
+    ----------------------------------------
+    Total                     10.080ns (4.609ns logic, 5.471ns route)
+                                       (45.7% logic, 54.3% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock U1/pll_base_inst/CLKOUT0
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+U1/pll_base_inst/CLKOUT0|    4.765|         |         |         |
+------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.72 secs
+ 
+--> 
+
+Total memory usage is 276336 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   55 (   0 filtered)
+Number of infos    :   10 (   0 filtered)
+

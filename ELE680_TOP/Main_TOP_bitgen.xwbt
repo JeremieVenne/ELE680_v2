@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.ncd
+OUTFILE=C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.bit
+FAMILY=Spartan6
+PART=xc6slx9-3tqg144
+WORKINGDIR=C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP
+LICENSE=WebPack
+USER_INFO=210918511_0_0_512
