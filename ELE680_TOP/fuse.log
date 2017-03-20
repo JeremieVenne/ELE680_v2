@@ -1,25 +1,25 @@
-Running: /home/f3nr1r/Manual_Softwares/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/MAIN_TOP_TB_isim_beh.exe" -prj "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/MAIN_TOP_TB_beh.prj" "work.MAIN_TOP_TB" 
+Running: /home/f3nr1r/Manual_Softwares/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/MAIN_TOP_TB_isim_beh.exe" -prj "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/MAIN_TOP_TB_beh.prj" "work.MAIN_TOP_TB" 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/ipcore_dir/DCM_block.vhd" into library work
-Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/Main_ctrlr.vhd" into library work
-Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/ipcore_dir/BRAM.vhd" into library work
-Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/FTDI_Block.vhd" into library work
-Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/DAC_Block.vhd" into library work
-Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/BRAM_ctrlr.vhd" into library work
-Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/Main_TOP.vhd" into library work
-WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/Main_TOP.vhd" Line 148: Actual for formal port c0 is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/Main_TOP.vhd" Line 149: Actual for formal port c1 is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/Main_TOP.vhd" Line 153: Actual for formal port r is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/Main_TOP.vhd" Line 163: Actual for formal port reset is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/Main_TOP.vhd" Line 206: Actual for formal port rstb is neither a static name nor a globally static expression
-Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/MAIN_TOP_TB.vhd" into library work
+Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/ipcore_dir/DCM_block.vhd" into library work
+Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_ctrlr.vhd" into library work
+Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/ipcore_dir/BRAM.vhd" into library work
+Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/FTDI_Block.vhd" into library work
+Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/DAC_Block.vhd" into library work
+Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/BRAM_ctrlr.vhd" into library work
+Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" into library work
+WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" Line 153: Actual for formal port c0 is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" Line 154: Actual for formal port c1 is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" Line 158: Actual for formal port r is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" Line 168: Actual for formal port reset is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" Line 213: Actual for formal port rstb is neither a static name nor a globally static expression
+Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/MAIN_TOP_TB.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 187672 KB
-Fuse CPU Usage: 2530 ms
+Fuse Memory Usage: 187692 KB
+Fuse CPU Usage: 2240 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
@@ -53,7 +53,7 @@ Compiling architecture behavior of entity main_top_tb
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 47 VHDL Units
-Built simulation executable /home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/MAIN_TOP_TB_isim_beh.exe
-Fuse Memory Usage: 763092 KB
-Fuse CPU Usage: 3130 ms
-GCC CPU Usage: 180 ms
+Built simulation executable /home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/MAIN_TOP_TB_isim_beh.exe
+Fuse Memory Usage: 763344 KB
+Fuse CPU Usage: 2770 ms
+GCC CPU Usage: 120 ms

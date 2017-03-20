@@ -139,7 +139,7 @@ architecture Behavioral of Main_TOP is
 	signal D_mem_s, D_SRAM_o_s, D_SRAM_i_s, inc_rd_addr_s: std_logic_vector (13 downto 0);
 	signal D_DAC_s: std_logic_vector (13 downto 0);
 	signal att_s : std_logic_vector(3 downto 0);
-	signal CLK_OUT1:std_logic;
+	signal DCM_CLK_s, clk_dac_s:std_logic;
 	signal debug_s, led_s : std_logic_vector (11 downto 0);
   --DEBUT DU TOP-------------------------------------------------------
 BEGIN
@@ -149,9 +149,9 @@ BEGIN
       INIT => '0', -- Sets initial state of the Q output to '0' or '1'
       SRTYPE => "SYNC") -- Specifies "SYNC" or "ASYNC" set/reset
    PORT MAP (
-      Q => CLK_dac_o, -- 1-bit output data
-      C0 => not(CLK_OUT1), -- 1-bit clock input
-      C1 => not(CLK_OUT1), -- 1-bit clock input
+      Q => clk_dac_s, -- 1-bit output data
+      C0 => not(DCM_CLK_s), -- 1-bit clock input
+      C1 => not(DCM_CLK_s), -- 1-bit clock input
       CE => '1',  -- 1-bit clock enable input
       D0 => '0',   -- 1-bit data input (associated with C0)
       D1 => '1',   -- 1-bit data input (associated with C1)
@@ -163,7 +163,7 @@ BEGIN
 		(-- Clock in ports
 		 CLK_IN1 => CLK_i,
 		 -- Clock out ports
-		 CLK_OUT1 => CLK_OUT1,
+		 CLK_OUT1 => DCM_CLK_s,
 		 -- Status and control signals
 		 RESET  => not(RST_i),
 		 LOCKED => dcm_locked_s);
@@ -177,7 +177,7 @@ BEGIN
 		TXE_i => TXE_i, 
 		ft_wr_en_i => ft_wr_en_s, 
 		RST_i => RST_i, 
-		CLK_i => CLK_OUT1, 
+		CLK_i => DCM_CLK_s, 
 		D_io => D_io_s, 
 		RD_o => RD_o, 
 		WR_o => WR_o, 
@@ -201,15 +201,15 @@ BEGIN
 		DEBUG_o => debug_s,
 	   LED_o => led_s,
 		RST_i => RST_i,
-		CLK_i => CLK_OUT1
+		CLK_i => DCM_CLK_s
 		);
 	U4 : BRAM
 	  PORT MAP (
-		 clka => CLK_OUT1,
+		 clka => DCM_CLK_s,
 		 wea => wen_s,
 		 addra => mem_wr_addr_s,
 		 dina => D_SRAM_o_s,
-		 clkb => CLK_OUT1,
+		 clkb => DCM_CLK_s,
 		 rstb => not(RST_i), --system reset is 0 when active
 		 addrb => mem_rd_addr_s,
 		 doutb => D_SRAM_i_s
@@ -231,7 +231,7 @@ BEGIN
 			WEN_o =>wen_s,
 			--DEBUG_o => debug_s,
 			--LED_o => led_s,
-			CLK_i =>CLK_OUT1,
+			CLK_i =>DCM_CLK_s,
 			RST_i => RST_i
 		);
 	U6:DAC_Block 
@@ -239,10 +239,11 @@ BEGIN
 			  ATT_i => att_s,
            D_o =>D_o,
            RST_i =>RST_i,
-           CLK_i =>CLK_OUT1
+           CLK_i =>DCM_CLK_s
 		);
-LED_o <= wr_addr_i (11 downto 0) when (D_io_s = x"81") else (others=>'0');
+LED_o <= wr_addr_s (11 downto 0) when (D_io_s = x"81") else (others=>'0');
 --LED_o <= mem_rd_addr_s (11 downto 0) when (D_io_s = x"84") else (others=>'0');
 DEBUG_o <= debug_s;
+CLK_dac_o <= clk_dac_s;
 END Behavioral;
 

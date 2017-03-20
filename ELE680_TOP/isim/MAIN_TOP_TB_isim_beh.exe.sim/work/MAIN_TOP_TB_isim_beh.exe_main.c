@@ -14,7 +14,6 @@
 
 struct XSI_INFO xsi_info;
 
-char *IEEE_P_0774719531;
 char *IEEE_P_3620187407;
 char *IEEE_P_3499444699;
 char *IEEE_P_2592010699;
@@ -23,8 +22,9 @@ char *IEEE_P_1242562249;
 char *UNISIM_P_0947159679;
 char *STD_TEXTIO;
 char *IEEE_P_2717149903;
-char *UNISIM_P_3222816464;
 char *IEEE_P_1367372525;
+char *UNISIM_P_3222816464;
+char *IEEE_P_0774719531;
 char *IEEE_P_3564397177;
 
 
@@ -67,7 +67,6 @@ int main(int argc, char **argv)
 
     xsi_register_tops("work_a_0161084865_2372691052");
 
-    IEEE_P_0774719531 = xsi_get_engine_memory("ieee_p_0774719531");
     IEEE_P_3620187407 = xsi_get_engine_memory("ieee_p_3620187407");
     IEEE_P_3499444699 = xsi_get_engine_memory("ieee_p_3499444699");
     IEEE_P_2592010699 = xsi_get_engine_memory("ieee_p_2592010699");
@@ -77,8 +76,9 @@ int main(int argc, char **argv)
     UNISIM_P_0947159679 = xsi_get_engine_memory("unisim_p_0947159679");
     STD_TEXTIO = xsi_get_engine_memory("std_textio");
     IEEE_P_2717149903 = xsi_get_engine_memory("ieee_p_2717149903");
-    UNISIM_P_3222816464 = xsi_get_engine_memory("unisim_p_3222816464");
     IEEE_P_1367372525 = xsi_get_engine_memory("ieee_p_1367372525");
+    UNISIM_P_3222816464 = xsi_get_engine_memory("unisim_p_3222816464");
+    IEEE_P_0774719531 = xsi_get_engine_memory("ieee_p_0774719531");
     IEEE_P_3564397177 = xsi_get_engine_memory("ieee_p_3564397177");
 
     return xsi_run_simulation(argc, argv);
