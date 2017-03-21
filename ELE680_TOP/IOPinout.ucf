@@ -102,7 +102,7 @@ NET "D_o[0]" LOC = P111;
 #DAC clock
 #LOC = "C5";#pin 139
 NET "CLK_dac_o" LOC = P139;
-NET "CLK_dac_o" PERIOD = 80 ns;
+NET "CLK_dac_o" PERIOD = 10 ns;
 
 # PlanAhead Generated IO constraints 
 

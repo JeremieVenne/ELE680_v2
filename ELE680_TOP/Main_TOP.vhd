@@ -150,7 +150,7 @@ BEGIN
       SRTYPE => "SYNC") -- Specifies "SYNC" or "ASYNC" set/reset
    PORT MAP (
       Q => clk_dac_s, -- 1-bit output data
-      C0 => not(DCM_CLK_s), -- 1-bit clock input
+      C0 => DCM_CLK_s, -- 1-bit clock input
       C1 => not(DCM_CLK_s), -- 1-bit clock input
       CE => '1',  -- 1-bit clock enable input
       D0 => '0',   -- 1-bit data input (associated with C0)
@@ -243,7 +243,7 @@ BEGIN
 		);
 LED_o <= wr_addr_s (11 downto 0) when (D_io_s = x"81") else (others=>'0');
 --LED_o <= mem_rd_addr_s (11 downto 0) when (D_io_s = x"84") else (others=>'0');
-DEBUG_o <= debug_s;
+DEBUG_o <= D_mem_s(13 downto 2);
 CLK_dac_o <= clk_dac_s;
 END Behavioral;
 

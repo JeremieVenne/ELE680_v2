@@ -50,6 +50,6 @@ begin
 		END IF;
 	END IF;
 end process;
-D_o <= D_DAC_s (11 downto 0);
+D_o <= D_DAC_s (13 downto 2);
 end Behavioral;
 

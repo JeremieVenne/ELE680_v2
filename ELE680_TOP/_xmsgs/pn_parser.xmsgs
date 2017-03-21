@@ -8,7 +8,22 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/User/Documents/GitHub/ELE680_v2/ELE680_TOP/BRAM_TOP.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/User/Documents/GitHub/ELE680_v2/ELE680_TOP/BRAM_ctrlr.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/User/Documents/GitHub/ELE680_v2/ELE680_TOP/DAC_Block.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/User/Documents/GitHub/ELE680_v2/ELE680_TOP/FTDI_Block.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/User/Documents/GitHub/ELE680_v2/ELE680_TOP/Main_TOP.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/User/Documents/GitHub/ELE680_v2/ELE680_TOP/Main_ctrlr.vhd&quot; into library work</arg>
 </msg>
 
 </messages>

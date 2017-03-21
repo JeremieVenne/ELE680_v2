@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Thu Mar 16 22:43:47 2017
+// Written by: Map P.20131013 on Mon Mar 20 21:19:37 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -55,6 +55,6 @@ COMP "LED_o<9>" LOCATE = SITE "P12" LEVEL 1;
 COMP "D_o<10>" LOCATE = SITE "P132" LEVEL 1;
 COMP "D_o<11>" LOCATE = SITE "P133" LEVEL 1;
 NET "U1/clkin1" PERIOD = 10 ns HIGH 50%;
-NET "CLK_dac_o" PERIOD = 80 ns HIGH 50%;
+NET "CLK_dac_o" PERIOD = 10 ns HIGH 50%;
 SCHEMATIC END;
 

@@ -108,32 +108,31 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\ipcore_dir\DCM_block.vhd" into library work
+Parsing VHDL file "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\ipcore_dir\DCM_block.vhd" into library work
 Parsing entity <DCM_block>.
 Parsing architecture <xilinx> of entity <dcm_block>.
-Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_ctrlr.vhd" into library work
-Parsing entity <Main_ctrlr>.
-Parsing architecture <Behavioral> of entity <main_ctrlr>.
-Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\ipcore_dir\BRAM.vhd" into library work
+Parsing VHDL file "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\ipcore_dir\BRAM.vhd" into library work
 Parsing entity <BRAM>.
 Parsing architecture <BRAM_a> of entity <bram>.
-Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\FTDI_Block.vhd" into library work
+Parsing VHDL file "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_ctrlr.vhd" into library work
+Parsing entity <Main_ctrlr>.
+Parsing architecture <Behavioral> of entity <main_ctrlr>.
+Parsing VHDL file "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\FTDI_Block.vhd" into library work
 Parsing entity <FTDI_Block>.
 Parsing architecture <Behavioral> of entity <ftdi_block>.
-Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\DAC_Block.vhd" into library work
+Parsing VHDL file "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\DAC_Block.vhd" into library work
 Parsing entity <DAC_Block>.
 Parsing architecture <Behavioral> of entity <dac_block>.
-Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\BRAM_ctrlr.vhd" into library work
+Parsing VHDL file "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\BRAM_ctrlr.vhd" into library work
 Parsing entity <BRAM_ctrlr>.
 Parsing architecture <Behavioral> of entity <bram_ctrlr>.
-Parsing VHDL file "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" into library work
+Parsing VHDL file "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_TOP.vhd" into library work
 Parsing entity <Main_TOP>.
 Parsing architecture <Behavioral> of entity <main_top>.
-WARNING:HDLCompiler:946 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" Line 153: Actual for formal port c0 is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" Line 154: Actual for formal port c1 is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" Line 158: Actual for formal port r is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" Line 168: Actual for formal port reset is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" Line 213: Actual for formal port rstb is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_TOP.vhd" Line 154: Actual for formal port c1 is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_TOP.vhd" Line 158: Actual for formal port r is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_TOP.vhd" Line 168: Actual for formal port reset is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_TOP.vhd" Line 213: Actual for formal port rstb is neither a static name nor a globally static expression
 
 =========================================================================
 *                            HDL Elaboration                            *
@@ -146,12 +145,12 @@ Elaborating entity <DCM_block> (architecture <xilinx>) from library <work>.
 Elaborating entity <FTDI_Block> (architecture <Behavioral>) with generics from library <work>.
 
 Elaborating entity <Main_ctrlr> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:1127 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_ctrlr.vhd" Line 190: Assignment to fdiv_s ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_ctrlr.vhd" Line 190: Assignment to fdiv_s ignored, since the identifier is never used
 
 Elaborating entity <BRAM> (architecture <BRAM_a>) from library <work>.
 
 Elaborating entity <BRAM_ctrlr> (architecture <Behavioral>) from library <work>.
-INFO:HDLCompiler:679 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\BRAM_ctrlr.vhd" Line 142. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\BRAM_ctrlr.vhd" Line 142. Case statement is complete. others clause is never selected
 
 Elaborating entity <DAC_Block> (architecture <Behavioral>) from library <work>.
 
@@ -160,25 +159,26 @@ Elaborating entity <DAC_Block> (architecture <Behavioral>) from library <work>.
 =========================================================================
 
 Synthesizing Unit <Main_TOP>.
-    Related source file is "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd".
+    Related source file is "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_TOP.vhd".
         clk_period = 10
-INFO:Xst:3210 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" line 161: Output port <LOCKED> of the instance <U1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" line 170: Output port <DEBUG_o> of the instance <U2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" line 170: Output port <LED_o> of the instance <U2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_TOP.vhd" line 187: Output port <LED_o> of the instance <U3> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_TOP.vhd" line 161: Output port <LOCKED> of the instance <U1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_TOP.vhd" line 170: Output port <DEBUG_o> of the instance <U2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_TOP.vhd" line 170: Output port <LED_o> of the instance <U2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_TOP.vhd" line 187: Output port <DEBUG_o> of the instance <U3> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_TOP.vhd" line 187: Output port <LED_o> of the instance <U3> is unconnected or connected to loadless signal.
 INFO:Xst:2774 - HDL ADVISOR - KEEP property attached to signal D_io_s may hinder XST clustering optimizations.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <Main_TOP> synthesized.
 
 Synthesizing Unit <DCM_block>.
-    Related source file is "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\ipcore_dir\DCM_block.vhd".
+    Related source file is "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\ipcore_dir\DCM_block.vhd".
     Summary:
 	no macro.
 Unit <DCM_block> synthesized.
 
 Synthesizing Unit <FTDI_Block>.
-    Related source file is "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\FTDI_Block.vhd".
+    Related source file is "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\FTDI_Block.vhd".
         clk_period = 10
 WARNING:Xst:653 - Signal <DEBUG_o> is used but never assigned. This sourceless signal will be automatically connected to value GND.
 WARNING:Xst:653 - Signal <LED_o> is used but never assigned. This sourceless signal will be automatically connected to value GND.
@@ -197,7 +197,7 @@ WARNING:Xst:653 - Signal <LED_o> is used but never assigned. This sourceless sig
     | Inputs             | 6                                              |
     | Outputs            | 4                                              |
     | Clock              | CLK_i (rising_edge)                            |
-    | Reset              | RST_i_INV_10_o (positive)                      |
+    | Reset              | RST_i_INV_8_o (positive)                       |
     | Reset type         | synchronous                                    |
     | Reset State        | write_init                                     |
     | Power Up State     | write_init                                     |
@@ -211,7 +211,7 @@ WARNING:Xst:653 - Signal <LED_o> is used but never assigned. This sourceless sig
     | Inputs             | 5                                              |
     | Outputs            | 5                                              |
     | Clock              | CLK_i (rising_edge)                            |
-    | Reset              | RST_i_INV_10_o (positive)                      |
+    | Reset              | RST_i_INV_8_o (positive)                       |
     | Reset type         | synchronous                                    |
     | Reset State        | read_init                                      |
     | Power Up State     | read_init                                      |
@@ -259,7 +259,7 @@ WARNING:Xst:653 - Signal <LED_o> is used but never assigned. This sourceless sig
 Unit <FTDI_Block> synthesized.
 
 Synthesizing Unit <Main_ctrlr>.
-    Related source file is "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\Main_ctrlr.vhd".
+    Related source file is "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\Main_ctrlr.vhd".
     Found 12-bit register for signal <debug_s>.
     Found 4-bit register for signal <Top_State>.
     Found 1-bit register for signal <start_byte_read>.
@@ -285,7 +285,7 @@ INFO:Xst:1799 - State error is never reached in FSM <Top_State>.
     | Inputs             | 12                                             |
     | Outputs            | 7                                              |
     | Clock              | CLK_i (rising_edge)                            |
-    | Reset              | RST_i_INV_21_o (positive)                      |
+    | Reset              | RST_i_INV_19_o (positive)                      |
     | Reset type         | synchronous                                    |
     | Reset State        | idle_top                                       |
     | Power Up State     | idle_top                                       |
@@ -299,7 +299,7 @@ INFO:Xst:1799 - State error is never reached in FSM <Top_State>.
     | Inputs             | 11                                             |
     | Outputs            | 6                                              |
     | Clock              | CLK_i (rising_edge)                            |
-    | Reset              | RST_i_INV_21_o (positive)                      |
+    | Reset              | RST_i_INV_19_o (positive)                      |
     | Reset type         | synchronous                                    |
     | Reset State        | idle                                           |
     | Power Up State     | idle                                           |
@@ -326,7 +326,7 @@ INFO:Xst:1799 - State error is never reached in FSM <Top_State>.
 Unit <Main_ctrlr> synthesized.
 
 Synthesizing Unit <BRAM_ctrlr>.
-    Related source file is "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\BRAM_ctrlr.vhd".
+    Related source file is "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\BRAM_ctrlr.vhd".
     Found 1-bit register for signal <smp_rdy_past>.
     Found 1-bit register for signal <mem_wr_ack_s>.
     Found 1-bit register for signal <wr_en_s>.
@@ -356,7 +356,7 @@ INFO:Xst:1799 - State error is never reached in FSM <mem_write_state>.
     | Inputs             | 2                                              |
     | Outputs            | 4                                              |
     | Clock              | CLK_i (rising_edge)                            |
-    | Reset              | RST_i_INV_39_o (positive)                      |
+    | Reset              | RST_i_INV_37_o (positive)                      |
     | Reset type         | synchronous                                    |
     | Reset State        | idle                                           |
     | Power Up State     | idle                                           |
@@ -376,9 +376,9 @@ INFO:Xst:1799 - State error is never reached in FSM <mem_write_state>.
 Unit <BRAM_ctrlr> synthesized.
 
 Synthesizing Unit <DAC_Block>.
-    Related source file is "C:\Users\User\Desktop\ELE680-dev_sam V2\ELE680_TOP\DAC_Block.vhd".
+    Related source file is "C:\Users\User\Documents\GitHub\ELE680_v2\ELE680_TOP\DAC_Block.vhd".
 WARNING:Xst:647 - Input <ATT_i> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 12-bit register for signal <D_DAC_s<11:0>>.
+    Found 12-bit register for signal <D_DAC_s<13:2>>.
     Summary:
 	inferred  12 D-type flip-flop(s).
 Unit <DAC_Block> synthesized.
@@ -427,18 +427,6 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 
 Reading core <ipcore_dir/BRAM.ngc>.
 Loading core <BRAM> for timing and area information for instance <U4>.
-WARNING:Xst:1710 - FF/Latch <debug_s_0> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <debug_s_1> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <debug_s_2> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <debug_s_3> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <debug_s_4> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <debug_s_5> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <debug_s_6> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <debug_s_7> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <debug_s_8> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <debug_s_9> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <debug_s_10> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <debug_s_11> (without init value) has a constant value of 0 in block <U3>. This FF/Latch will be trimmed during the optimization process.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -583,8 +571,8 @@ WARNING:Xst:2677 - Node <U3/att_o_3> of sequential type is unconnected in block 
 WARNING:Xst:2677 - Node <U3/att_o_2> of sequential type is unconnected in block <Main_TOP>.
 WARNING:Xst:2677 - Node <U3/att_o_1> of sequential type is unconnected in block <Main_TOP>.
 WARNING:Xst:2677 - Node <U3/att_o_0> of sequential type is unconnected in block <Main_TOP>.
-WARNING:Xst:2677 - Node <U5/D_DAC_s_13> of sequential type is unconnected in block <Main_TOP>.
-WARNING:Xst:2677 - Node <U5/D_DAC_s_12> of sequential type is unconnected in block <Main_TOP>.
+WARNING:Xst:2677 - Node <U5/D_DAC_s_1> of sequential type is unconnected in block <Main_TOP>.
+WARNING:Xst:2677 - Node <U5/D_DAC_s_0> of sequential type is unconnected in block <Main_TOP>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -669,10 +657,10 @@ Slice Logic Utilization:
     Number used as Logic:               386  out of   5720     6%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    474
-   Number with an unused Flip Flop:     237  out of    474    50%  
-   Number with an unused LUT:            88  out of    474    18%  
-   Number of fully used LUT-FF pairs:   149  out of    474    31%  
+ Number of LUT Flip Flop pairs used:    479
+   Number with an unused Flip Flop:     242  out of    479    50%  
+   Number with an unused LUT:            93  out of    479    19%  
+   Number of fully used LUT-FF pairs:   144  out of    479    30%  
    Number of unique control sets:        16
 
 IO Utilization: 
@@ -706,7 +694,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-U1/pll_base_inst/CLKOUT0           | BUFG                   | 263   |
+U1/pll_base_inst/CLKOUT0           | BUFG                   | 264   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -776,7 +764,7 @@ Offset:              6.781ns (Levels of Logic = 5)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'U1/pll_base_inst/CLKOUT0'
-  Total number of paths / destination ports: 874 / 34
+  Total number of paths / destination ports: 886 / 46
 -------------------------------------------------------------------------
 Offset:              8.063ns (Levels of Logic = 5)
   Source:            U2/read_state_FSM_FFd1_1 (FF)
@@ -836,13 +824,13 @@ U1/pll_base_inst/CLKOUT0|    4.765|         |         |         |
 
 
 Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.72 secs
+Total CPU time to Xst completion: 9.88 secs
  
 --> 
 
-Total memory usage is 276336 kilobytes
+Total memory usage is 277104 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   55 (   0 filtered)
-Number of infos    :   10 (   0 filtered)
+Number of warnings :   42 (   0 filtered)
+Number of infos    :   11 (   0 filtered)
 

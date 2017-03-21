@@ -5,8 +5,8 @@ Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc IOPinout.ucf -p
 xc6slx9-tqg144-3 Main_TOP.ngc Main_TOP.ngd
 
-Reading NGO file "C:/Users/User/Desktop/ELE680-dev_sam
-V2/ELE680_TOP/Main_TOP.ngc" ...
+Reading NGO file
+"C:/Users/User/Documents/GitHub/ELE680_v2/ELE680_TOP/Main_TOP.ngc" ...
 Loading design module "ipcore_dir/BRAM.ngc"...
 Gathering constraint information from source properties...
 Done.
@@ -18,7 +18,7 @@ INFO:ConstraintSystem - The Period constraint <NET "CLK_i" PERIOD = 10 ns;>
    [IOPinout.ucf(5)], is specified using the Net Period method which is not
    recommended. Please use the Timespec PERIOD method.
 
-INFO:ConstraintSystem - The Period constraint <NET "CLK_dac_o" PERIOD = 80 ns;>
+INFO:ConstraintSystem - The Period constraint <NET "CLK_dac_o" PERIOD = 10 ns;>
    [IOPinout.ucf(105)], is specified using the Net Period method which is not
    recommended. Please use the Timespec PERIOD method.
 
