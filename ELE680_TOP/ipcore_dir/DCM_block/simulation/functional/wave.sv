@@ -89,16 +89,16 @@ group set -comment {}
 group clear 0 end
 
 group insert \
-    {DCM_block_tb.dut.clk} \
-
+    {DCM_block_tb.dut.clk[1]} \
+    {DCM_block_tb.dut.clk[2]} 
 group using {Counters}
 group set -overlay 0
 group set -comment {}
 group clear 0 end
 
 group insert \
-    {DCM_block_tb.dut.counter} \
-
+    {DCM_block_tb.dut.counter[1]} \
+    {DCM_block_tb.dut.counter[2]} 
 group using {Status/control}
 group set -overlay 0
 group set -comment {}

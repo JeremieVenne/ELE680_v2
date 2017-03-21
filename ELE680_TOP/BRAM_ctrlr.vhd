@@ -101,7 +101,7 @@ begin
 					WHEN DAC_GEN_STOP =>
 						D_DAC_s <= (others=>'0');
 						IF (GEN_RUN_i = '1') THEN
-							read_addr_s <= unsigned(wr_addr_i);
+							read_addr_s <= (others=>'0');
 							mem_read_state <= DAC_GEN_RUN;
 						end IF;
 					WHEN DAC_GEN_RUN =>

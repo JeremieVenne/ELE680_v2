@@ -55,6 +55,7 @@ architecture Behavioral of Main_TOP is
 		  CLK_IN1           : in     std_logic;
 		  -- Clock out ports
 		  CLK_OUT1          : out    std_logic;
+		  CLK_OUT2          : out    std_logic;
 		  -- Status and control signals
 		  RESET             : in     std_logic;
 		  LOCKED            : out    std_logic
@@ -149,12 +150,12 @@ BEGIN
       INIT => '0', -- Sets initial state of the Q output to '0' or '1'
       SRTYPE => "SYNC") -- Specifies "SYNC" or "ASYNC" set/reset
    PORT MAP (
-      Q => clk_dac_s, -- 1-bit output data
-      C0 => DCM_CLK_s, -- 1-bit clock input
-      C1 => not(DCM_CLK_s), -- 1-bit clock input
+      Q => CLK_dac_o, -- 1-bit output data
+      C0 => clk_dac_s, -- 1-bit clock input
+      C1 => not(clk_dac_s), -- 1-bit clock input
       CE => '1',  -- 1-bit clock enable input
-      D0 => '0',   -- 1-bit data input (associated with C0)
-      D1 => '1',   -- 1-bit data input (associated with C1)
+      D0 => '1',   -- 1-bit data input (associated with C0)
+      D1 => '0',   -- 1-bit data input (associated with C1)
       R => not(RST_i),    -- 1-bit reset input
       S => '0'     -- 1-bit set input
    );
@@ -164,6 +165,7 @@ BEGIN
 		 CLK_IN1 => CLK_i,
 		 -- Clock out ports
 		 CLK_OUT1 => DCM_CLK_s,
+		 CLK_OUT2 => clk_dac_s,
 		 -- Status and control signals
 		 RESET  => not(RST_i),
 		 LOCKED => dcm_locked_s);
@@ -243,7 +245,6 @@ BEGIN
 		);
 LED_o <= wr_addr_s (11 downto 0) when (D_io_s = x"81") else (others=>'0');
 --LED_o <= mem_rd_addr_s (11 downto 0) when (D_io_s = x"84") else (others=>'0');
-DEBUG_o <= D_mem_s(13 downto 2);
-CLK_dac_o <= clk_dac_s;
+DEBUG_o <= D_DAC_s(13 downto 2);
 END Behavioral;
 

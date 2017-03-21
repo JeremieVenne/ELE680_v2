@@ -199,7 +199,7 @@ begin
 					temp_buf_2_bytes <= x"0000";
 					smp_rdy_o <= '0';
 					ft_wr_en_o <= '0';
-					wr_addr_s <= (others=>'0');
+					--wr_addr_s <= (others=>'0');
 					IF (start_byte_read = '1' AND ft_rd_done_i = '1') THEN
 						Sub_State <= read_qty;
 						D_io_s <= D_io;
