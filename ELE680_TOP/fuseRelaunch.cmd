@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "C:/Users/User/Documents/GitHub/ELE680_v2/ELE680_TOP/MAIN_TOP_TB_isim_beh.exe" -prj "C:/Users/User/Documents/GitHub/ELE680_v2/ELE680_TOP/MAIN_TOP_TB_beh.prj" "work.MAIN_TOP_TB" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/MAIN_TOP_TB_isim_beh.exe" -prj "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/MAIN_TOP_TB_beh.prj" "work.MAIN_TOP_TB" 

@@ -86,7 +86,7 @@ ARCHITECTURE behavior OF MAIN_TOP_TB IS
 	constant arret 				: trame2 := (x"71",x"83",x"01",x"00",x"00");
 	constant demarrage 			: trame2 := (x"71",x"84",x"01",x"00",x"00");
 	constant attenuation 		: trame2 := (x"71",x"85",x"01",x"00",x"00");
-	constant saut 					: trame2 := (x"71",x"86",x"01",x"00",x"05");
+	constant saut 					: trame2 := (x"71",x"86",x"01",x"00",x"03");
 	constant diviseur 			: trame2 := (x"71",x"87",x"01",x"00",x"02");
 
  
@@ -343,7 +343,7 @@ BEGIN
 		wait until WR_o = '0';
 		TXE_i <= '1';
 		
-				for i in 0 to 4 loop
+		for i in 0 to 4 loop
 			RXF_i  <= '0';
 			wait until RD_o = '0';
 			wait for 14 ns;
@@ -359,7 +359,143 @@ BEGIN
 		wait until WR_o = '0';
 		TXE_i <= '1';
 --				
-		wait for CLK_i_period * 30;
+		wait for CLK_i_period * 10;
+		
+		for i in 0 to 4 loop
+			RXF_i  <= '0';
+			wait until RD_o = '0';
+			wait for 14 ns;
+			D_ft_io <= arret(i);
+			wait until RD_o = '1';
+			wait for 14 ns;
+			RXF_i  <= '1';
+			wait for 49 ns;
+		end loop;
+		
+		D_ft_io <= "ZZZZZZZZ";
+		TXE_i <= '0';
+		wait until WR_o = '0';
+		TXE_i <= '1';
+		
+		for i in 0 to 4 loop
+			RXF_i  <= '0';
+			wait until RD_o = '0';
+			wait for 14 ns;
+			D_ft_io <= demarrage(i);
+			wait until RD_o = '1';
+			wait for 14 ns;
+			RXF_i  <= '1';
+			wait for 49 ns;
+		end loop;
+		
+		D_ft_io <= "ZZZZZZZZ";
+		TXE_i <= '0';
+		wait until WR_o = '0';
+		TXE_i <= '1';
+--				
+		wait for CLK_i_period * 10;
+		
+		for i in 0 to 4 loop
+			RXF_i  <= '0';
+			wait until RD_o = '0';
+			wait for 14 ns;
+			D_ft_io <= arret(i);
+			wait until RD_o = '1';
+			wait for 14 ns;
+			RXF_i  <= '1';
+			wait for 49 ns;
+		end loop;
+		
+		D_ft_io <= "ZZZZZZZZ";
+		TXE_i <= '0';
+		wait until WR_o = '0';
+		TXE_i <= '1';
+		
+		for i in 0 to 4 loop
+			RXF_i  <= '0';
+			wait until RD_o = '0';
+			wait for 14 ns;
+			D_ft_io <= demarrage(i);
+			wait until RD_o = '1';
+			wait for 14 ns;
+			RXF_i  <= '1';
+			wait for 49 ns;
+		end loop;
+		
+		D_ft_io <= "ZZZZZZZZ";
+		TXE_i <= '0';
+		wait until WR_o = '0';
+		TXE_i <= '1';
+--				
+		wait for CLK_i_period * 10;
+		
+		for i in 0 to 4 loop
+			RXF_i  <= '0';
+			wait until RD_o = '0';
+			wait for 14 ns;
+			D_ft_io <= arret(i);
+			wait until RD_o = '1';
+			wait for 14 ns;
+			RXF_i  <= '1';
+			wait for 49 ns;
+		end loop;
+		
+		D_ft_io <= "ZZZZZZZZ";
+		TXE_i <= '0';
+		wait until WR_o = '0';
+		TXE_i <= '1';
+		
+		for i in 0 to 4 loop
+			RXF_i  <= '0';
+			wait until RD_o = '0';
+			wait for 14 ns;
+			D_ft_io <= demarrage(i);
+			wait until RD_o = '1';
+			wait for 14 ns;
+			RXF_i  <= '1';
+			wait for 49 ns;
+		end loop;
+		
+		D_ft_io <= "ZZZZZZZZ";
+		TXE_i <= '0';
+		wait until WR_o = '0';
+		TXE_i <= '1';
+--				
+		wait for CLK_i_period * 10;
+		
+		for i in 0 to 4 loop
+			RXF_i  <= '0';
+			wait until RD_o = '0';
+			wait for 14 ns;
+			D_ft_io <= arret(i);
+			wait until RD_o = '1';
+			wait for 14 ns;
+			RXF_i  <= '1';
+			wait for 49 ns;
+		end loop;
+		
+		D_ft_io <= "ZZZZZZZZ";
+		TXE_i <= '0';
+		wait until WR_o = '0';
+		TXE_i <= '1';
+		
+		for i in 0 to 4 loop
+			RXF_i  <= '0';
+			wait until RD_o = '0';
+			wait for 14 ns;
+			D_ft_io <= demarrage(i);
+			wait until RD_o = '1';
+			wait for 14 ns;
+			RXF_i  <= '1';
+			wait for 49 ns;
+		end loop;
+		
+		D_ft_io <= "ZZZZZZZZ";
+		TXE_i <= '0';
+		wait until WR_o = '0';
+		TXE_i <= '1';
+--				
+		wait for CLK_i_period * 10;
 		
 		for i in 0 to 4 loop
 			RXF_i  <= '0';

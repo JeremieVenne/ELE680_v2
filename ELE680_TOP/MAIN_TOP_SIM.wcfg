@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="/home/f3nr1r/Documents/Workspace/Xilinx/ELE680/ELE680_TOP/MAIN_TOP_TB_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/MAIN_TOP_TB_isim_beh.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="main_top_tb" />
             <top_module name="numeric_std" />
@@ -20,7 +20,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="42" />
+   <WVObjectSize size="44" />
    <wvobject fp_name="/main_top_tb/clk_i" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk_i</obj_property>
       <obj_property name="ObjectShortName">clk_i</obj_property>
@@ -175,6 +175,16 @@
       <obj_property name="ElementShortName">clk_out1</obj_property>
       <obj_property name="ObjectShortName">clk_out1</obj_property>
       <obj_property name="label">clk_out1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_top_tb/uut/U5/read_addr_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">read_addr_s[14:0]</obj_property>
+      <obj_property name="ObjectShortName">read_addr_s[14:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_top_tb/uut/U5/future_read_addr_s" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">future_read_addr_s[14:0]</obj_property>
+      <obj_property name="ObjectShortName">future_read_addr_s[14:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/main_top_tb/uut/U5/mem_rd_addr_o" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">mem_rd_addr_o[14:0]</obj_property>

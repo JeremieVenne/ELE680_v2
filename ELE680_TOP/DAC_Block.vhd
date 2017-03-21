@@ -40,7 +40,7 @@ end DAC_Block;
 architecture Behavioral of DAC_Block is
 signal D_DAC_s : std_logic_vector (13 downto 0);
 begin
-process(CLK_i,RST_i)
+process(CLK_i)
 begin
 	IF(rising_edge(CLK_i)) THEN
 		IF (RST_i = '0') THEN

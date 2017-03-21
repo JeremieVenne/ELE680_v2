@@ -43,9 +43,10 @@ entity FTDI_Block is
            RD_o : out  STD_LOGIC;
            WR_o : out  STD_LOGIC;
            ft_wr_done_o : out  STD_LOGIC;
-           ft_rd_done_o : out  STD_LOGIC;
-			  DEBUG_o : out STD_LOGIC_VECTOR (11 downto 0);
-			  LED_o : out STD_LOGIC_VECTOR (11 downto 0));
+           ft_rd_done_o : out  STD_LOGIC
+			  --DEBUG_o : out STD_LOGIC_VECTOR (11 downto 0)
+			  --LED_o : out STD_LOGIC_VECTOR (11 downto 0)
+			  );
 end FTDI_Block;
 
 architecture Behavioral of FTDI_Block is
@@ -60,7 +61,7 @@ architecture Behavioral of FTDI_Block is
 	
 begin
 --process for read FSM
-PROCESS(CLK_i, RST_i)
+PROCESS(CLK_i)
 BEGIN	
 	IF (rising_edge(clk_i)) THEN
 		IF (RST_i = '0') THEN

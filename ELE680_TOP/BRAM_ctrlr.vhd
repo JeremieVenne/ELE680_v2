@@ -67,7 +67,7 @@ signal debug_s, led_s : std_logic_vector (11 downto 0);
 
 begin
 
-	PROCESS(CLK_i, RST_i)
+	PROCESS(CLK_i)
 	BEGIN
 	   IF (rising_edge(CLK_i)) THEN
 			IF (RST_i = '0') THEN
@@ -100,45 +100,23 @@ begin
 				CASE mem_read_state IS
 					WHEN DAC_GEN_STOP =>
 						D_DAC_s <= (others=>'0');
-						IF (GEN_RUN_i = '1') THEN
-							read_addr_s <= (others=>'0');
-							mem_read_state <= DAC_GEN_RUN;
-						end IF;
-					WHEN DAC_GEN_RUN =>
+						read_addr_s <= (others=>'0');
+						future_read_addr_s <= (others=>'0');
 						IF (GEN_RUN_i = '1') THEN
 							mem_read_state <= SRAM_to_DAC;
-							D_DAC_s <= D_SRAM_i;
 						end IF;
 					WHEN  SRAM_to_DAC =>
-						D_DAC_s <= D_SRAM_i;
-						--mem_read_state <= set_addr;
-						future_read_addr_s <= read_addr_s + unsigned(inc_rd_addr_i);
 						IF (GEN_RUN_i = '1') THEN
-							IF (future_read_addr_s < (unsigned(max_rd_addr_i))) THEN
-								read_addr_s <= future_read_addr_s;
-								mem_read_state <= SRAM_to_DAC;
+							D_DAC_s <= D_SRAM_i;
+							IF (read_addr_s + unsigned(inc_rd_addr_i) >= (unsigned(max_rd_addr_i))) THEN
+								read_addr_s <= read_addr_s - unsigned(max_rd_addr_i) + unsigned(inc_rd_addr_i);
 							ELSE
-								read_addr_s <= future_read_addr_s - unsigned(max_rd_addr_i) ;
-								mem_read_state <= SRAM_to_DAC;
+								read_addr_s <= read_addr_s + unsigned(inc_rd_addr_i);
 							END IF;
 						ELSE
 							read_addr_s <= (others=>'0');
 							mem_read_state <= DAC_GEN_STOP;
 						END IF;
---					WHEN set_addr =>
---						IF (GEN_RUN_i = '1') THEN
---							IF (future_read_addr_s < (unsigned(max_rd_addr_i))) THEN
---								read_addr_s <= future_read_addr_s;
---								mem_read_state <= SRAM_to_DAC;
---							ELSE
---								read_addr_s <= future_read_addr_s - unsigned(max_rd_addr_i) ;
---								mem_read_state <= SRAM_to_DAC;
---							END IF;
---						ELSE
---							read_addr_s <= (others=>'0');
---							mem_read_state <= DAC_GEN_STOP;
---						END IF;
-						
 					WHEN OTHERS=>
 						mem_write_state <= ERROR;
 				end CASE;

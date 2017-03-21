@@ -140,7 +140,7 @@ architecture Behavioral of Main_TOP is
 	signal D_mem_s, D_SRAM_o_s, D_SRAM_i_s, inc_rd_addr_s: std_logic_vector (13 downto 0);
 	signal D_DAC_s: std_logic_vector (13 downto 0);
 	signal att_s : std_logic_vector(3 downto 0);
-	signal DCM_CLK_s, clk_dac_s:std_logic;
+	signal DCM_CLK_s, clk_dac_s, clk_dac_o_s:std_logic;
 	signal debug_s, led_s : std_logic_vector (11 downto 0);
   --DEBUT DU TOP-------------------------------------------------------
 BEGIN
@@ -150,7 +150,7 @@ BEGIN
       INIT => '0', -- Sets initial state of the Q output to '0' or '1'
       SRTYPE => "SYNC") -- Specifies "SYNC" or "ASYNC" set/reset
    PORT MAP (
-      Q => CLK_dac_o, -- 1-bit output data
+      Q => DEBUG_o(2), -- 1-bit output data
       C0 => clk_dac_s, -- 1-bit clock input
       C1 => not(clk_dac_s), -- 1-bit clock input
       CE => '1',  -- 1-bit clock enable input
@@ -245,6 +245,9 @@ BEGIN
 		);
 LED_o <= wr_addr_s (11 downto 0) when (D_io_s = x"81") else (others=>'0');
 --LED_o <= mem_rd_addr_s (11 downto 0) when (D_io_s = x"84") else (others=>'0');
-DEBUG_o <= D_DAC_s(13 downto 2);
+DEBUG_o(11 downto 4) <= (others=>'0');
+DEBUG_o(3) <= DCM_CLK_s;
+DEBUG_o(1 downto 0) <= (others=>'0');
+
 END Behavioral;
 

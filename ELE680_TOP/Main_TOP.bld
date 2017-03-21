@@ -1,12 +1,13 @@
-Release 14.7 ngdbuild P.20131013 (nt64)
+Release 14.7 ngdbuild P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
+Command Line:
+/home/f3nr1r/Manual_Softwares/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild
 -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc IOPinout.ucf -p
 xc6slx9-tqg144-3 Main_TOP.ngc Main_TOP.ngd
 
 Reading NGO file
-"C:/Users/User/Documents/GitHub/ELE680_v2/ELE680_TOP/Main_TOP.ngc" ...
+"/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.ngc" ...
 Loading design module "ipcore_dir/BRAM.ngc"...
 Gathering constraint information from source properties...
 Done.
@@ -18,8 +19,16 @@ INFO:ConstraintSystem - The Period constraint <NET "CLK_i" PERIOD = 10 ns;>
    [IOPinout.ucf(5)], is specified using the Net Period method which is not
    recommended. Please use the Timespec PERIOD method.
 
+INFO:ConstraintSystem - The Period constraint <NET "DEBUG_o[3]" PERIOD = 10 ns;>
+   [IOPinout.ucf(70)], is specified using the Net Period method which is not
+   recommended. Please use the Timespec PERIOD method.
+
+INFO:ConstraintSystem - The Period constraint <NET "DEBUG_o[2]" PERIOD = 10 ns;>
+   [IOPinout.ucf(73)], is specified using the Net Period method which is not
+   recommended. Please use the Timespec PERIOD method.
+
 INFO:ConstraintSystem - The Period constraint <NET "CLK_dac_o" PERIOD = 10 ns;>
-   [IOPinout.ucf(105)], is specified using the Net Period method which is not
+   [IOPinout.ucf(107)], is specified using the Net Period method which is not
    recommended. Please use the Timespec PERIOD method.
 
 Done...
@@ -37,7 +46,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 164260 kilobytes
+Total memory usage is 407816 kilobytes
 
 Writing NGD file "Main_TOP.ngd" ...
 Total REAL time to NGDBUILD completion:  3 sec

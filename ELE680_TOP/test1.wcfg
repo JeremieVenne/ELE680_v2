@@ -3,7 +3,7 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="C:/Users/User/Documents/GitHub/ELE680_v2/ELE680_TOP/MAIN_TOP_TB_isim_beh.wdb" id="1" type="auto">
+      <db_ref path="/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/MAIN_TOP_TB_isim_beh.wdb" id="1" type="auto">
          <top_modules>
             <top_module name="main_top_tb" />
             <top_module name="numeric_std" />
@@ -20,7 +20,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="15" />
+   <WVObjectSize size="17" />
    <wvobject fp_name="/main_top_tb/rxf_i" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">rxf_i</obj_property>
       <obj_property name="ObjectShortName">rxf_i</obj_property>
@@ -33,17 +33,9 @@
       <obj_property name="ElementShortName">rst_i</obj_property>
       <obj_property name="ObjectShortName">rst_i</obj_property>
    </wvobject>
-   <wvobject fp_name="/main_top_tb/clk_i" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">clk_i</obj_property>
-      <obj_property name="ObjectShortName">clk_i</obj_property>
-   </wvobject>
    <wvobject fp_name="/main_top_tb/d_ft_io" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">d_ft_io[7:0]</obj_property>
       <obj_property name="ObjectShortName">d_ft_io[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/main_top_tb/d_o" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">d_o[11:0]</obj_property>
-      <obj_property name="ObjectShortName">d_o[11:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/main_top_tb/led_o" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">led_o[11:0]</obj_property>
@@ -61,10 +53,6 @@
       <obj_property name="ElementShortName">wr_o</obj_property>
       <obj_property name="ObjectShortName">wr_o</obj_property>
    </wvobject>
-   <wvobject fp_name="/main_top_tb/clk_dac_o" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">clk_dac_o</obj_property>
-      <obj_property name="ObjectShortName">clk_dac_o</obj_property>
-   </wvobject>
    <wvobject fp_name="/main_top_tb/clk_i_period" type="other" db_ref_id="1">
       <obj_property name="ElementShortName">clk_i_period</obj_property>
       <obj_property name="ObjectShortName">clk_i_period</obj_property>
@@ -73,6 +61,10 @@
       <obj_property name="ElementShortName">clk_dac_o_period</obj_property>
       <obj_property name="ObjectShortName">clk_dac_o_period</obj_property>
    </wvobject>
+   <wvobject fp_name="/main_top_tb/clk_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
    <wvobject fp_name="/main_top_tb/uut/U1/clk_out1" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk_out1</obj_property>
       <obj_property name="ObjectShortName">clk_out1</obj_property>
@@ -80,5 +72,22 @@
    <wvobject fp_name="/main_top_tb/uut/U1/clk_out2" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk_out2</obj_property>
       <obj_property name="ObjectShortName">clk_out2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_top_tb/uut/U5/clk_i" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_i</obj_property>
+      <obj_property name="ObjectShortName">clk_i</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_top_tb/uut/clk_dac_s" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_dac_s</obj_property>
+      <obj_property name="ObjectShortName">clk_dac_s</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_top_tb/uut/clk_dac_o" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk_dac_o</obj_property>
+      <obj_property name="ObjectShortName">clk_dac_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_top_tb/d_o" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">d_o[11:0]</obj_property>
+      <obj_property name="ObjectShortName">d_o[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
 </wave_config>
