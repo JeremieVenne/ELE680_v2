@@ -10,7 +10,7 @@ Target Device  : xc6slx9
 Target Package : tqg144
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Tue Mar 21 18:57:05 2017
+Mapped Date    : Tue Mar 21 19:01:00 2017
 
 Mapping design into LUTs...
 Running directed packing...
@@ -19,7 +19,7 @@ Updating timing models...
 INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
-Total REAL time at the beginning of Placer: 6 secs 
+Total REAL time at the beginning of Placer: 5 secs 
 Total CPU  time at the beginning of Placer: 5 secs 
 
 Phase 1.1  Initial Placement Analysis
@@ -27,9 +27,10 @@ Phase 1.1  Initial Placement Analysis (Checksum:66aa6473) REAL time: 6 secs
 
 Phase 2.7  Design Feasibility Check
 WARNING:Place:1206 - This design contains a global buffer instance,
-   <U1/clkout1_buf>, driving the net, <DEBUG_o_3_OBUF>, that is driving the
+   <U1/clkout1_buf>, driving the net, <CLK_dac_o_OBUF>, that is driving the
    following (first 30) non-clock load pins off chip.
    < PIN: DEBUG_o<3>.O; >
+   < PIN: CLK_dac_o.O; >
    This design practice, in Spartan-6, can lead to an unroutable situation due
    to limitations in the global routing. If the design does route there may be
    excessive delay or skew on this net. It is recommended to use a Clock
@@ -41,9 +42,10 @@ WARNING:Place:1206 - This design contains a global buffer instance,
    constraint disables all clock placer rules related to the specified COMP.PIN.
 WARNING:Place:1137 - This design is not guaranteed to be routable! This design
    contains a global buffer instance, <U1/clkout1_buf>, driving the net,
-   <DEBUG_o_3_OBUF>, that is driving the following (first 30) non-clock load
+   <CLK_dac_o_OBUF>, that is driving the following (first 30) non-clock load
    pins.
    < PIN: DEBUG_o<3>.O; >
+   < PIN: CLK_dac_o.O; >
    This is not a recommended design practice in Spartan-6 due to limitations in
    the global routing that may cause excessive delay, skew or unroutable
    situations.  It is recommended to only use a BUFG resource to drive clock
@@ -95,15 +97,13 @@ Total REAL time to Placer completion: 10 secs
 Total CPU  time to Placer completion: 9 secs 
 Running post-placement packing...
 Writing output files...
-WARNING:PhysDesignRules:368 - The signal <CLK_dac_o_OBUF> is incomplete. The
-   signal is not driven by any source pin in the design.
 
 Design Summary
 --------------
 
 Design Summary:
 Number of errors:      0
-Number of warnings:    3
+Number of warnings:    2
 Slice Logic Utilization:
   Number of Slice Registers:                   222 out of  11,440    1%
     Number used as Flip Flops:                 210
@@ -177,7 +177,7 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                4.34
 
-Peak Memory Usage:  709 MB
+Peak Memory Usage:  708 MB
 Total REAL time to MAP completion:  10 secs 
 Total CPU time to MAP completion:   10 secs 
 

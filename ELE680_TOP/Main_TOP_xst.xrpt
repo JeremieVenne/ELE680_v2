@@ -5,7 +5,7 @@
     The structure and the elements are likely to change over the next few releases.
     This means code written to parse this file will need to be revisited each subsequent release.-->
 
-  <application stringID="Xst" timeStamp="Tue Mar 21 18:56:42 2017">
+  <application stringID="Xst" timeStamp="Tue Mar 21 19:00:40 2017">
     <section stringID="User_Env">
       <table stringID="User_EnvVar">
         <column stringID="variable"/>
@@ -33,7 +33,7 @@
         <column stringID="speed"/>
         <row stringID="row" value="0">
           <item stringID="arch" value="Intel(R) Core(TM) i5-4200M CPU @ 2.50GHz"/>
-          <item stringID="speed" value="3000.488 MHz"/>
+          <item stringID="speed" value="2975.683 MHz"/>
         </row>
       </table>
     </section>
@@ -185,11 +185,11 @@
         <item dataType="int" stringID="XST_CLOCK_BUFFERS" value="3">
           <item dataType="int" label="-bufg" stringID="XST_BUFG" value="3"/>
         </item>
-        <item dataType="int" stringID="XST_IO_BUFFERS" value="50">
+        <item dataType="int" stringID="XST_IO_BUFFERS" value="51">
           <item dataType="int" stringID="XST_IBUF" value="3"/>
           <item dataType="int" stringID="XST_IBUFG" value="1"/>
           <item dataType="int" label="-iobuf" stringID="XST_IOBUF" value="8"/>
-          <item dataType="int" stringID="XST_OBUF" value="38"/>
+          <item dataType="int" stringID="XST_OBUF" value="39"/>
         </item>
         <item dataType="int" stringID="XST_OTHERS" value="1"></item>
       </section>
@@ -205,7 +205,7 @@
       <item AVAILABLE="465" dataType="int" label="Number of fully used LUT-FF pairs" stringID="XST_NUMBER_OF_FULLY_USED_LUTFF_PAIRS" value="130"/>
       <item dataType="int" label="Number of unique control sets" stringID="XST_NUMBER_OF_UNIQUE_CONTROL_SETS" value="15"/>
       <item dataType="int" label="Number of IOs" stringID="XST_NUMBER_OF_IOS" value="51"/>
-      <item AVAILABLE="102" dataType="int" label="Number of bonded IOBs" stringID="XST_NUMBER_OF_BONDED_IOBS" value="50"/>
+      <item AVAILABLE="102" dataType="int" label="Number of bonded IOBs" stringID="XST_NUMBER_OF_BONDED_IOBS" value="51"/>
       <item AVAILABLE="32" dataType="int" label="Number of Block RAM/FIFO" stringID="XST_NUMBER_OF_BLOCK_RAMFIFO" value="26"/>
       <item dataType="int" label="Number using Block RAM only" stringID="XST_NUMBER_USING_BLOCK_RAM_ONLY" value="26"/>
       <item AVAILABLE="16" dataType="int" label="Number of BUFG/BUFGCTRLs" stringID="XST_NUMBER_OF_BUFGBUFGCTRLS" value="3"/>

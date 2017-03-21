@@ -248,6 +248,7 @@ LED_o <= wr_addr_s (11 downto 0) when (D_io_s = x"81") else (others=>'0');
 DEBUG_o(11 downto 4) <= (others=>'0');
 DEBUG_o(3) <= DCM_CLK_s;
 DEBUG_o(1 downto 0) <= (others=>'0');
+CLK_dac_o <= DCM_CLK_s;
 
 END Behavioral;
 

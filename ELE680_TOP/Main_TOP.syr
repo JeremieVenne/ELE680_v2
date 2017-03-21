@@ -632,11 +632,11 @@ Primitive and Black Box Usage:
 #      RAMB16BWER                  : 26
 # Clock Buffers                    : 3
 #      BUFG                        : 3
-# IO Buffers                       : 50
+# IO Buffers                       : 51
 #      IBUF                        : 3
 #      IBUFG                       : 1
 #      IOBUF                       : 8
-#      OBUF                        : 38
+#      OBUF                        : 39
 # Others                           : 1
 #      PLL_ADV                     : 1
 
@@ -660,7 +660,7 @@ Slice Logic Distribution:
 
 IO Utilization: 
  Number of IOs:                          51
- Number of bonded IOBs:                  50  out of    102    49%  
+ Number of bonded IOBs:                  51  out of    102    50%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:               26  out of     32    81%  
@@ -871,12 +871,12 @@ U1/pll_base_inst/CLKOUT0|    8.187|         |         |         |
 
 
 Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.53 secs
+Total CPU time to Xst completion: 10.78 secs
  
 --> 
 
 
-Total memory usage is 408740 kilobytes
+Total memory usage is 408748 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   43 (   0 filtered)
