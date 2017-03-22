@@ -38,7 +38,7 @@ entity DAC_Block is
 end DAC_Block;
 
 architecture Behavioral of DAC_Block is
-signal D_DAC_s : std_logic_vector (13 downto 0);
+signal D_DAC_s : std_logic_vector (11 downto 0);
 begin
 process(CLK_i)
 begin
@@ -46,10 +46,37 @@ begin
 		IF (RST_i = '0') THEN
 			D_DAC_s <= (others=>'0');
 		ELSE
-			D_DAC_s <= D_DAC_i;
+			CASE ATT_i IS
+				WHEN x"0"=>
+					D_DAC_s <= D_DAC_i(13 downto 2);
+				WHEN x"1"=>
+					D_DAC_s <= "0" & D_DAC_i(13 downto 3);
+				WHEN x"2"=>
+					D_DAC_s <= "00" & D_DAC_i(13 downto 4);
+				WHEN x"3"=>
+					D_DAC_s <= "000" & D_DAC_i(13 downto 5);
+				WHEN x"4"=>
+					D_DAC_s <= "0000" & D_DAC_i(13 downto 6);
+				WHEN x"5"=>
+					D_DAC_s <= "00000" & D_DAC_i(13 downto 7);
+				WHEN x"6"=>
+					D_DAC_s <= "000000" & D_DAC_i(13 downto 8);
+				WHEN x"7"=>
+					D_DAC_s <= "0000000" & D_DAC_i(13 downto 9);
+				WHEN x"8"=>
+					D_DAC_s <= "00000000" & D_DAC_i(13 downto 10);
+				WHEN x"9"=>
+					D_DAC_s <= "000000000" & D_DAC_i(13 downto 11);
+				WHEN x"A"=>
+					D_DAC_s <= "0000000000" & D_DAC_i(13 downto 12);
+				WHEN x"B"=>
+					D_DAC_s <= "00000000000" & D_DAC_i(13 downto 13);
+				WHEN others=>
+					D_DAC_s <= (others=>'0');		
+			end CASE;
 		END IF;
 	END IF;
 end process;
-D_o <= D_DAC_s (13 downto 2);
+D_o <= D_DAC_s;
 end Behavioral;
 

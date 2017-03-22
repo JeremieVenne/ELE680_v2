@@ -19,14 +19,6 @@ INFO:ConstraintSystem - The Period constraint <NET "CLK_i" PERIOD = 10 ns;>
    [IOPinout.ucf(5)], is specified using the Net Period method which is not
    recommended. Please use the Timespec PERIOD method.
 
-INFO:ConstraintSystem - The Period constraint <NET "DEBUG_o[3]" PERIOD = 10 ns;>
-   [IOPinout.ucf(70)], is specified using the Net Period method which is not
-   recommended. Please use the Timespec PERIOD method.
-
-INFO:ConstraintSystem - The Period constraint <NET "DEBUG_o[2]" PERIOD = 10 ns;>
-   [IOPinout.ucf(73)], is specified using the Net Period method which is not
-   recommended. Please use the Timespec PERIOD method.
-
 INFO:ConstraintSystem - The Period constraint <NET "CLK_dac_o" PERIOD = 10 ns;>
    [IOPinout.ucf(107)], is specified using the Net Period method which is not
    recommended. Please use the Timespec PERIOD method.
@@ -46,7 +38,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 407808 kilobytes
+Total memory usage is 407576 kilobytes
 
 Writing NGD file "Main_TOP.ngd" ...
 Total REAL time to NGDBUILD completion:  3 sec

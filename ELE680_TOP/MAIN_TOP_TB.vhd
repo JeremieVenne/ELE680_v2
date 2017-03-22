@@ -87,7 +87,7 @@ ARCHITECTURE behavior OF MAIN_TOP_TB IS
 	constant demarrage 			: trame2 := (x"71",x"84",x"01",x"00",x"00");
 	constant attenuation 		: trame2 := (x"71",x"85",x"01",x"00",x"00");
 	constant saut 					: trame2 := (x"71",x"86",x"01",x"00",x"03");
-	constant diviseur 			: trame2 := (x"71",x"87",x"01",x"00",x"02");
+	constant diviseur 			: trame2 := (x"71",x"87",x"01",x"00",x"06");
 
  
  
