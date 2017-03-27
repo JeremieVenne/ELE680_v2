@@ -33,6 +33,7 @@ use ieee.numeric_std.all;
 entity Main_ctrlr is
     Port ( D_io : inout  STD_LOGIC_VECTOR (7 downto 0);
            att_o : out  STD_LOGIC_VECTOR (3 downto 0);
+			  fdiv_o  : out  STD_LOGIC_VECTOR (4 downto 0);
            GEN_RUN_o : out  STD_LOGIC;
            mem_wr_ack_i : in  STD_LOGIC;
            D_mem_o : out  STD_LOGIC_VECTOR (13 downto 0);
@@ -288,5 +289,6 @@ wr_addr_o <= wr_addr_s;
 GEN_RUN_o <= GEN_RUN_s;
 LED_o <= led_s;
 DEBUG_o <= debug_s;
+fdiv_o <= fdiv_s;
 end Behavioral;
 

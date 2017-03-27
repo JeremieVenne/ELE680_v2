@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Mar 21 19:01:10 2017
+// Written by: Map P.20131013 on Mon Mar 27 12:46:12 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -54,13 +54,7 @@ COMP "LED_o<8>" LOCATE = SITE "P11" LEVEL 1;
 COMP "LED_o<9>" LOCATE = SITE "P12" LEVEL 1;
 COMP "D_o<10>" LOCATE = SITE "P132" LEVEL 1;
 COMP "D_o<11>" LOCATE = SITE "P133" LEVEL 1;
-PIN U1/clkout1_buf_pin<1> = BEL "U1/clkout1_buf" PINNAME O;
-PIN "U1/clkout1_buf_pin<1>" CLOCK_DEDICATED_ROUTE = FALSE;
-PIN U1/clkout2_buf_pin<1> = BEL "U1/clkout2_buf" PINNAME O;
-PIN "U1/clkout2_buf_pin<1>" CLOCK_DEDICATED_ROUTE = FALSE;
 NET "U1/clkin1" PERIOD = 10 ns HIGH 50%;
-NET "DEBUG_o<3>" PERIOD = 10 ns HIGH 50%;
-NET "DEBUG_o<2>" PERIOD = 10 ns HIGH 50%;
 NET "CLK_dac_o" PERIOD = 10 ns HIGH 50%;
 SCHEMATIC END;
 

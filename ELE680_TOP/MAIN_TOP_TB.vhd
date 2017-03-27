@@ -74,20 +74,20 @@ ARCHITECTURE behavior OF MAIN_TOP_TB IS
    signal CLK_dac_o : std_logic;
 
    -- Clock period definitions
-   constant CLK_i_period : time := 9 ns;
-   constant CLK_dac_o_period : time := 9 ns;
+   constant CLK_i_period : time := 10 ns;
+   constant CLK_dac_o_period : time := 10 ns;
 	
-	type trame1 is array (0 to 26) of std_logic_vector(7 downto 0);
+	type trame1 is array (0 to 62) of std_logic_vector(7 downto 0);
 	type trame2 is array (0 to 4) of std_logic_vector(7 downto 0);
 	--constant exemple 				: trame1 := (x"71",x"81",x"13",x"00",x"00",x"00",x"11",x"00",x"22",x"00",x"33",x"00",x"44",x"00",x"55",x"00",x"66",x"00",x"77",x"00",x"88",x"00",x"99");
 	constant adresse_ecriture 	: trame2 := (x"71",x"80",x"01",x"00",x"00");
-	constant chargement 			: trame1 := (x"71",x"81",x"17",x"00",x"00",x"00",x"01",x"00",x"02",x"00",x"03",x"00",x"04",x"00",x"05",x"00",x"06",x"00",x"05",x"00",x"04",x"00",x"03",x"00",x"02",x"00",x"01");
-	constant adresse_max 		: trame2 := (x"71",x"82",x"01",x"00",x"0C");
+	constant chargement 			: trame1 := (x"71",x"81",x"3B",x"00",x"00",x"00",x"01",x"00",x"02",x"00",x"03",x"00",x"04",x"00",x"05",x"00",x"06",x"00",x"07",x"00",x"08",x"00",x"09",x"00",x"0A",x"00",x"0B",x"00",x"0C",x"00",x"0D",x"00",x"0E",x"00",x"0F",x"00",x"0E",x"00",x"0D",x"00",x"0C",x"00",x"0B",x"00",x"0A",x"00",x"09",x"00",x"08",x"00",x"07",x"00",x"06",x"00",x"05",x"00",x"04",x"00",x"03",x"00",x"02",x"00",x"01");
+	constant adresse_max 		: trame2 := (x"71",x"82",x"01",x"00",x"1D");
 	constant arret 				: trame2 := (x"71",x"83",x"01",x"00",x"00");
 	constant demarrage 			: trame2 := (x"71",x"84",x"01",x"00",x"00");
 	constant attenuation 		: trame2 := (x"71",x"85",x"01",x"00",x"00");
-	constant saut 					: trame2 := (x"71",x"86",x"01",x"00",x"03");
-	constant diviseur 			: trame2 := (x"71",x"87",x"01",x"00",x"02");
+	constant saut 					: trame2 := (x"71",x"86",x"01",x"00",x"07");
+	constant diviseur 			: trame2 := (x"71",x"87",x"01",x"00",x"01");
 
  
  
@@ -157,7 +157,7 @@ BEGIN
 		--wait until state = "0000";
 		
 		TXE_i <= '1';
-		for i in 0 to 26 loop
+		for i in 0 to 62 loop
 			RXF_i  <= '0';
 			wait until RD_o = '0';
 			wait for 14 ns;

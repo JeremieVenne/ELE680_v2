@@ -194,7 +194,7 @@
    <wvobject fp_name="/main_top_tb/uut/U4/addrb" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">addrb[14:0]</obj_property>
       <obj_property name="ObjectShortName">addrb[14:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/main_top_tb/uut/U4/doutb" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">doutb[13:0]</obj_property>

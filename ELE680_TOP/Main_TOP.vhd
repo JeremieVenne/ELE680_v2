@@ -78,6 +78,7 @@ architecture Behavioral of Main_TOP is
 	COMPONENT Main_ctrlr
 		 PORT ( D_io : inout  STD_LOGIC_VECTOR (7 downto 0);
 				  att_o : out  STD_LOGIC_VECTOR (3 downto 0);
+				  fdiv_o  : out  STD_LOGIC_VECTOR (4 downto 0);
 				  GEN_RUN_o : out  STD_LOGIC;
 				  mem_wr_ack_i : in  STD_LOGIC := '1';
 				  D_mem_o : out  STD_LOGIC_VECTOR (13 downto 0);
@@ -98,6 +99,7 @@ architecture Behavioral of Main_TOP is
            wr_addr_i : in  STD_LOGIC_VECTOR (14 downto 0);
 			  inc_rd_addr_i : in  std_logic_vector(13 downto 0);
 			  max_rd_addr_i : in  std_logic_vector(14 downto 0);
+			  fdiv_i  : in  STD_LOGIC_VECTOR (4 downto 0);
            smp_rdy_i : in  STD_LOGIC;
 			  GEN_RUN_i : in  STD_LOGIC;
 			  D_SRAM_i : in  STD_LOGIC_VECTOR (13 downto 0);
@@ -140,6 +142,7 @@ architecture Behavioral of Main_TOP is
 	signal D_mem_s, D_SRAM_o_s, D_SRAM_i_s, inc_rd_addr_s: std_logic_vector (13 downto 0);
 	signal D_DAC_s: std_logic_vector (13 downto 0);
 	signal att_s : std_logic_vector(3 downto 0);
+	signal fdiv_s : std_logic_vector(4 downto 0);
 	signal DCM_CLK_s, clk_dac_s, clk_dac_o_s:std_logic;
 	signal debug_s, led_s : std_logic_vector (11 downto 0);
   --DEBUT DU TOP-------------------------------------------------------
@@ -150,7 +153,7 @@ BEGIN
       INIT => '0', -- Sets initial state of the Q output to '0' or '1'
       SRTYPE => "SYNC") -- Specifies "SYNC" or "ASYNC" set/reset
    PORT MAP (
-      Q => DEBUG_o(2), -- 1-bit output data
+      Q => CLK_dac_o, -- 1-bit output data
       C0 => clk_dac_s, -- 1-bit clock input
       C1 => not(clk_dac_s), -- 1-bit clock input
       CE => '1',  -- 1-bit clock enable input
@@ -190,6 +193,7 @@ BEGIN
 	PORT MAP(
 		D_io => D_io_s,
 		att_o => att_s,
+		fdiv_o => fdiv_s,
 		GEN_RUN_o => GEN_RUN_s,
 		mem_wr_ack_i => mem_wr_ack_s,
 		D_mem_o => D_mem_s,
@@ -222,6 +226,7 @@ BEGIN
 			wr_addr_i =>wr_addr_s,
 			inc_rd_addr_i =>inc_rd_addr_s,
 			max_rd_addr_i =>max_rd_addr_s,
+			fdiv_i => fdiv_s,
 			smp_rdy_i =>smp_rdy_s,
 			GEN_RUN_i =>GEN_RUN_s,
 			D_SRAM_i =>D_SRAM_i_s,
@@ -245,10 +250,8 @@ BEGIN
 		);
 LED_o <= wr_addr_s (11 downto 0) when (D_io_s = x"81") else (others=>'0');
 --LED_o <= mem_rd_addr_s (11 downto 0) when (D_io_s = x"84") else (others=>'0');
-DEBUG_o(11 downto 4) <= (others=>'0');
-DEBUG_o(3) <= DCM_CLK_s;
-DEBUG_o(1 downto 0) <= (others=>'0');
-CLK_dac_o <= DCM_CLK_s;
+DEBUG_o <= (others=>'0');
+
 
 END Behavioral;
 
