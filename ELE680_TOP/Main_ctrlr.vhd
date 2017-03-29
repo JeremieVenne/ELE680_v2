@@ -44,8 +44,8 @@ entity Main_ctrlr is
            ft_wr_done_i : in  STD_LOGIC;
            ft_rd_done_i : in  STD_LOGIC;
            ft_wr_en_o : out  STD_LOGIC;
-			  DEBUG_o : out STD_LOGIC_VECTOR (11 downto 0);
-			  LED_o : out STD_LOGIC_VECTOR (11 downto 0);
+			  --DEBUG_o : out STD_LOGIC_VECTOR (11 downto 0);
+			  --LED_o : out STD_LOGIC_VECTOR (11 downto 0);
            RST_i : in  STD_LOGIC;
            CLK_i : in  STD_LOGIC);
 end Main_ctrlr;
@@ -72,12 +72,13 @@ architecture Behavioral of Main_ctrlr is
 	signal Top_State : Top_State_type;
 	signal Sub_State : Bot_State_type;
 	
-	signal D_io_s, nb_byte : STD_LOGIC_VECTOR(7 downto 0);
+	signal D_io_s : STD_LOGIC_VECTOR(7 downto 0);
 	signal temp_buf_2_bytes : STD_LOGIC_VECTOR(15 downto 0);
 	signal wr_addr_s : STD_LOGIC_VECTOR(14 downto 0);
 	signal last_ft_rd_done_i,start_byte_read, GEN_RUN_s : STD_LOGIC;
 	signal fdiv_s : STD_LOGIC_VECTOR(4 downto 0);
 	signal debug_s, led_s : std_logic_vector (11 downto 0);
+	signal nb_byte : unsigned(7 downto 0);
 begin
 
 --TOP FSM PROCESS
@@ -188,7 +189,7 @@ begin
 	end PROCESS;
 
 --SUB FSM-write PROCESS
-	PROCESS(CLK_i, RST_i)
+	PROCESS(CLK_i)
 	BEGIN
 	IF (rising_edge(clk_i)) THEN
 		IF (RST_i = '0') THEN
@@ -207,7 +208,7 @@ begin
 					end IF;
 				WHEN read_qty =>		
 					IF (ft_rd_done_i = '1' AND last_ft_rd_done_i = '0') THEN
-						nb_byte <= std_logic_vector(unsigned(D_io) + 1);
+						nb_byte <= unsigned(D_io) + 1;
 						Sub_State <= read_byte1;
 					end IF;
 				WHEN read_byte1 =>		
@@ -234,7 +235,7 @@ begin
 					end IF;
 				WHEN inc_wr_addr=>
 					smp_rdy_o <= '0';
-					nb_byte <= std_logic_vector(unsigned(nb_byte) - 2);
+					nb_byte <= unsigned(nb_byte) - 2;
 					wr_addr_s <= std_logic_vector(unsigned(wr_addr_s) + 1);
 					IF (nb_byte = x"02") THEN
 						Sub_State <= wr_confirm;
@@ -287,8 +288,8 @@ begin
 D_io <= D_io_s WHEN (Sub_State = wr_confirm AND RST_i = '1'  AND ft_rd_done_i = '0') ELSE ("ZZZZZZZZ");
 wr_addr_o <= wr_addr_s;
 GEN_RUN_o <= GEN_RUN_s;
-LED_o <= led_s;
-DEBUG_o <= debug_s;
+--LED_o <= led_s;
+--DEBUG_o <= debug_s;
 fdiv_o <= fdiv_s;
 end Behavioral;
 

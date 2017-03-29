@@ -26,7 +26,7 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
    please see the device datasheet.
 
 ================================================================================
-Timing constraint: NET "U1/clkin1" PERIOD = 10 ns HIGH 50%;
+Timing constraint: TS_CLK_i = PERIOD TIMEGRP "CLK_i" 10 ns HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
  0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
@@ -34,7 +34,23 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
  Minimum period is   3.334ns.
 --------------------------------------------------------------------------------
 
-Component Switching Limit Checks: NET "U1/clkin1" PERIOD = 10 ns HIGH 50%;
+Component Switching Limit Checks: TS_CLK_i = PERIOD TIMEGRP "CLK_i" 10 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 4.075ns (period - min period limit)
+  Period: 5.000ns
+  Min period limit: 0.925ns (1081.081MHz) (Tpllper_CLKOUT(Foutmax))
+  Physical resource: U1/pll_base_inst/PLL_ADV/CLKOUT0
+  Logical resource: U1/pll_base_inst/PLL_ADV/CLKOUT0
+  Location pin: PLL_ADV_X0Y1.CLKOUT0
+  Clock network: U1/clkout0
+--------------------------------------------------------------------------------
+Slack: 4.075ns (period - min period limit)
+  Period: 5.000ns
+  Min period limit: 0.925ns (1081.081MHz) (Tpllper_CLKOUT(Foutmax))
+  Physical resource: U1/pll_base_inst/PLL_ADV/CLKOUT1
+  Logical resource: U1/pll_base_inst/PLL_ADV/CLKOUT1
+  Location pin: PLL_ADV_X0Y1.CLKOUT1
+  Clock network: U1/clkout1
 --------------------------------------------------------------------------------
 Slack: 6.666ns (period - (min low pulse limit / (low pulse / period)))
   Period: 10.000ns
@@ -45,27 +61,10 @@ Slack: 6.666ns (period - (min low pulse limit / (low pulse / period)))
   Location pin: PLL_ADV_X0Y1.CLKIN1
   Clock network: U1/pll_base_inst/PLL_ADV_ML_NEW_DIVCLK
 --------------------------------------------------------------------------------
-Slack: 6.666ns (period - (min high pulse limit / (high pulse / period)))
-  Period: 10.000ns
-  High pulse: 5.000ns
-  High pulse limit: 1.667ns (Tdcmpw_CLKIN_100_150)
-  Physical resource: U1/pll_base_inst/PLL_ADV/CLKIN1
-  Logical resource: U1/pll_base_inst/PLL_ADV/CLKIN1
-  Location pin: PLL_ADV_X0Y1.CLKIN1
-  Clock network: U1/pll_base_inst/PLL_ADV_ML_NEW_DIVCLK
---------------------------------------------------------------------------------
-Slack: 8.148ns (period - min period limit)
-  Period: 10.000ns
-  Min period limit: 1.852ns (539.957MHz) (Tpllper_CLKIN(Finmax))
-  Physical resource: U1/pll_base_inst/PLL_ADV/CLKIN1
-  Logical resource: U1/pll_base_inst/PLL_ADV/CLKIN1
-  Location pin: PLL_ADV_X0Y1.CLKIN1
-  Clock network: U1/pll_base_inst/PLL_ADV_ML_NEW_DIVCLK
---------------------------------------------------------------------------------
 
 ================================================================================
-Timing constraint: PERIOD analysis for net "U1/clkout1" derived from  NET 
-"U1/clkin1" PERIOD = 10 ns HIGH 50%; 
+Timing constraint: TS_U1_clkout1 = PERIOD TIMEGRP "U1_clkout1" TS_CLK_i / 2 
+PHASE 2.5 ns HIGH         50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
  0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
@@ -73,28 +72,27 @@ For more information, see Period Analysis in the Timing Closure User Guide (UG61
  Minimum period is   1.730ns.
 --------------------------------------------------------------------------------
 
-Component Switching Limit Checks: PERIOD analysis for net "U1/clkout1" derived from
- NET "U1/clkin1" PERIOD = 10 ns HIGH 50%;
-
+Component Switching Limit Checks: TS_U1_clkout1 = PERIOD TIMEGRP "U1_clkout1" TS_CLK_i / 2 PHASE 2.5 ns HIGH
+        50%;
 --------------------------------------------------------------------------------
-Slack: 8.270ns (period - min period limit)
-  Period: 10.000ns
+Slack: 3.270ns (period - min period limit)
+  Period: 5.000ns
   Min period limit: 1.730ns (578.035MHz) (Tbcper_I)
   Physical resource: U1/clkout2_buf/I0
   Logical resource: U1/clkout2_buf/I0
   Location pin: BUFGMUX_X3Y13.I0
   Clock network: U1/clkout1
 --------------------------------------------------------------------------------
-Slack: 8.361ns (period - min period limit)
-  Period: 10.000ns
+Slack: 3.361ns (period - min period limit)
+  Period: 5.000ns
   Min period limit: 1.639ns (610.128MHz) (Tockper)
   Physical resource: CLK_dac_o_OBUF/CLK0
   Logical resource: ODDR2_inst/CK0
   Location pin: OLOGIC_X2Y62.CLK0
   Clock network: clk_dac_s
 --------------------------------------------------------------------------------
-Slack: 8.597ns (period - min period limit)
-  Period: 10.000ns
+Slack: 3.597ns (period - min period limit)
+  Period: 5.000ns
   Min period limit: 1.403ns (712.758MHz) (Tockper)
   Physical resource: CLK_dac_o_OBUF/CLK1
   Logical resource: ODDR2_inst/CK1
@@ -103,604 +101,461 @@ Slack: 8.597ns (period - min period limit)
 --------------------------------------------------------------------------------
 
 ================================================================================
-Timing constraint: PERIOD analysis for net "U1/clkout0" derived from  NET 
-"U1/clkin1" PERIOD = 10 ns HIGH 50%; 
+Timing constraint: TS_U1_clkout0 = PERIOD TIMEGRP "U1_clkout0" TS_CLK_i / 2 
+HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 186206 paths analyzed, 1873 endpoints analyzed, 0 failing endpoints
+ 18783 paths analyzed, 2021 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   6.694ns.
+ Minimum period is   4.713ns.
 --------------------------------------------------------------------------------
 
-Paths for end point U5/read_addr_s_2 (SLICE_X21Y46.C1), 4358 paths
+Paths for end point U6/D_DAC_s_4 (OLOGIC_X10Y60.D1), 14 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     3.306ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               U5/read_addr_s_0 (FF)
-  Destination:          U5/read_addr_s_2 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      6.599ns (Levels of Logic = 6)
-  Clock Path Skew:      0.000ns
+Slack (setup path):     0.287ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               U3/att_o_0 (FF)
+  Destination:          U6/D_DAC_s_4 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      5.058ns (Levels of Logic = 2)
+  Clock Path Skew:      0.430ns (0.996 - 0.566)
   Source Clock:         DCM_CLK_s rising at 0.000ns
-  Destination Clock:    DCM_CLK_s rising at 10.000ns
-  Clock Uncertainty:    0.095ns
+  Destination Clock:    DCM_CLK_s rising at 5.000ns
+  Clock Uncertainty:    0.085ns
 
-  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.085ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
+    Discrete Jitter (DJ):       0.155ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: U5/read_addr_s_0 to U5/read_addr_s_2
+  Maximum Data Path at Slow Process Corner: U3/att_o_0 to U6/D_DAC_s_4
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y46.AQ      Tcko                  0.391   U5/read_addr_s<3>
-                                                       U5/read_addr_s_0
-    SLICE_X18Y44.A5      net (fanout=27)       1.202   U5/read_addr_s<0>
-    SLICE_X18Y44.COUT    Topcya                0.395   U5/D_SRAM_o_s<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_lut<0>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.COUT    Tbyp                  0.076   U3/D_mem_o<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.DMUX    Tcind                 0.272   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-    SLICE_X16Y44.B3      net (fanout=1)        1.391   U5/read_addr_s[14]_GND_38_o_add_14_OUT<11>
-    SLICE_X16Y44.COUT    Topcyb                0.380   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_lut<5>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y45.B5      net (fanout=16)       0.590   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y45.DMUX    Topbd                 0.571   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<2>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_lut<0>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<2>
-    SLICE_X21Y46.C1      net (fanout=1)        1.003   U5/read_addr_s[14]_GND_38_o_mux_15_OUT<2>
-    SLICE_X21Y46.CLK     Tas                   0.322   U5/read_addr_s<3>
-                                                       U5/Mmux_mem_read_state[1]_read_addr_s[14]_wide_mux_24_OUT81
-                                                       U5/read_addr_s_2
+    SLICE_X8Y46.AQ       Tcko                  0.447   U3/att_o<3>
+                                                       U3/att_o_0
+    SLICE_X9Y46.A6       net (fanout=11)       0.633   U3/att_o<0>
+    SLICE_X9Y46.A        Tilo                  0.259   U5/D_DAC_s_7_1
+                                                       lut546_57
+    SLICE_X9Y48.D3       net (fanout=2)        0.952   lut546_57
+    SLICE_X9Y48.D        Tilo                  0.259   ][2527_74
+                                                       lut563_73
+    OLOGIC_X10Y60.D1     net (fanout=1)        1.705   ][2527_74
+    OLOGIC_X10Y60.CLK0   Todck                 0.803   U6/D_DAC_s<4>
+                                                       U6/D_DAC_s_4
     -------------------------------------------------  ---------------------------
-    Total                                      6.599ns (2.407ns logic, 4.192ns route)
-                                                       (36.5% logic, 63.5% route)
+    Total                                      5.058ns (1.768ns logic, 3.290ns route)
+                                                       (35.0% logic, 65.0% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.321ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               U5/read_addr_s_0 (FF)
-  Destination:          U5/read_addr_s_2 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      6.584ns (Levels of Logic = 6)
-  Clock Path Skew:      0.000ns
+Slack (setup path):     0.309ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               U5/D_DAC_s_12_1 (FF)
+  Destination:          U6/D_DAC_s_4 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      5.035ns (Levels of Logic = 2)
+  Clock Path Skew:      0.429ns (0.996 - 0.567)
   Source Clock:         DCM_CLK_s rising at 0.000ns
-  Destination Clock:    DCM_CLK_s rising at 10.000ns
-  Clock Uncertainty:    0.095ns
+  Destination Clock:    DCM_CLK_s rising at 5.000ns
+  Clock Uncertainty:    0.085ns
 
-  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.085ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
+    Discrete Jitter (DJ):       0.155ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: U5/read_addr_s_0 to U5/read_addr_s_2
+  Maximum Data Path at Slow Process Corner: U5/D_DAC_s_12_1 to U6/D_DAC_s_4
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y46.AQ      Tcko                  0.391   U5/read_addr_s<3>
-                                                       U5/read_addr_s_0
-    SLICE_X18Y44.A5      net (fanout=27)       1.202   U5/read_addr_s<0>
-    SLICE_X18Y44.COUT    Topcya                0.395   U5/D_SRAM_o_s<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_lut<0>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.COUT    Tbyp                  0.076   U3/D_mem_o<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.DMUX    Tcind                 0.272   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-    SLICE_X16Y44.B3      net (fanout=1)        1.391   U5/read_addr_s[14]_GND_38_o_add_14_OUT<11>
-    SLICE_X16Y44.COUT    Topcyb                0.380   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_lut<5>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y45.C4      net (fanout=16)       0.671   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y45.DMUX    Topcd                 0.475   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<2>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_A71
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<2>
-    SLICE_X21Y46.C1      net (fanout=1)        1.003   U5/read_addr_s[14]_GND_38_o_mux_15_OUT<2>
-    SLICE_X21Y46.CLK     Tas                   0.322   U5/read_addr_s<3>
-                                                       U5/Mmux_mem_read_state[1]_read_addr_s[14]_wide_mux_24_OUT81
-                                                       U5/read_addr_s_2
+    SLICE_X8Y47.CQ       Tcko                  0.447   U5/D_DAC_s_10_1
+                                                       U5/D_DAC_s_12_1
+    SLICE_X9Y46.A2       net (fanout=3)        0.610   U5/D_DAC_s_12_1
+    SLICE_X9Y46.A        Tilo                  0.259   U5/D_DAC_s_7_1
+                                                       lut546_57
+    SLICE_X9Y48.D3       net (fanout=2)        0.952   lut546_57
+    SLICE_X9Y48.D        Tilo                  0.259   ][2527_74
+                                                       lut563_73
+    OLOGIC_X10Y60.D1     net (fanout=1)        1.705   ][2527_74
+    OLOGIC_X10Y60.CLK0   Todck                 0.803   U6/D_DAC_s<4>
+                                                       U6/D_DAC_s_4
     -------------------------------------------------  ---------------------------
-    Total                                      6.584ns (2.311ns logic, 4.273ns route)
+    Total                                      5.035ns (1.768ns logic, 3.267ns route)
                                                        (35.1% logic, 64.9% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.349ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               U5/read_addr_s_0 (FF)
-  Destination:          U5/read_addr_s_2 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      6.556ns (Levels of Logic = 6)
-  Clock Path Skew:      0.000ns
+Slack (setup path):     0.312ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               U5/D_DAC_s_13_1 (FF)
+  Destination:          U6/D_DAC_s_4 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      5.032ns (Levels of Logic = 2)
+  Clock Path Skew:      0.429ns (0.996 - 0.567)
   Source Clock:         DCM_CLK_s rising at 0.000ns
-  Destination Clock:    DCM_CLK_s rising at 10.000ns
-  Clock Uncertainty:    0.095ns
+  Destination Clock:    DCM_CLK_s rising at 5.000ns
+  Clock Uncertainty:    0.085ns
 
-  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.085ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
+    Discrete Jitter (DJ):       0.155ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: U5/read_addr_s_0 to U5/read_addr_s_2
+  Maximum Data Path at Slow Process Corner: U5/D_DAC_s_13_1 to U6/D_DAC_s_4
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y46.AQ      Tcko                  0.391   U5/read_addr_s<3>
-                                                       U5/read_addr_s_0
-    SLICE_X18Y44.A5      net (fanout=27)       1.202   U5/read_addr_s<0>
-    SLICE_X18Y44.COUT    Topcya                0.395   U5/D_SRAM_o_s<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_lut<0>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.COUT    Tbyp                  0.076   U3/D_mem_o<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.DMUX    Tcind                 0.272   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-    SLICE_X16Y44.B3      net (fanout=1)        1.391   U5/read_addr_s[14]_GND_38_o_add_14_OUT<11>
-    SLICE_X16Y44.COUT    Topcyb                0.380   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_lut<5>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y45.B5      net (fanout=16)       0.590   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y45.DMUX    Topbd                 0.528   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<2>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_A16
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<2>
-    SLICE_X21Y46.C1      net (fanout=1)        1.003   U5/read_addr_s[14]_GND_38_o_mux_15_OUT<2>
-    SLICE_X21Y46.CLK     Tas                   0.322   U5/read_addr_s<3>
-                                                       U5/Mmux_mem_read_state[1]_read_addr_s[14]_wide_mux_24_OUT81
-                                                       U5/read_addr_s_2
+    SLICE_X8Y47.AQ       Tcko                  0.447   U5/D_DAC_s_10_1
+                                                       U5/D_DAC_s_13_1
+    SLICE_X9Y46.A1       net (fanout=3)        0.607   U5/D_DAC_s_13_1
+    SLICE_X9Y46.A        Tilo                  0.259   U5/D_DAC_s_7_1
+                                                       lut546_57
+    SLICE_X9Y48.D3       net (fanout=2)        0.952   lut546_57
+    SLICE_X9Y48.D        Tilo                  0.259   ][2527_74
+                                                       lut563_73
+    OLOGIC_X10Y60.D1     net (fanout=1)        1.705   ][2527_74
+    OLOGIC_X10Y60.CLK0   Todck                 0.803   U6/D_DAC_s<4>
+                                                       U6/D_DAC_s_4
     -------------------------------------------------  ---------------------------
-    Total                                      6.556ns (2.364ns logic, 4.192ns route)
-                                                       (36.1% logic, 63.9% route)
+    Total                                      5.032ns (1.768ns logic, 3.264ns route)
+                                                       (35.1% logic, 64.9% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point U5/read_addr_s_3 (SLICE_X21Y46.D4), 5842 paths
+Paths for end point U6/D_DAC_s_0 (OLOGIC_X11Y60.D1), 20 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     3.379ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               U5/read_addr_s_0 (FF)
-  Destination:          U5/read_addr_s_3 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      6.526ns (Levels of Logic = 6)
-  Clock Path Skew:      0.000ns
+Slack (setup path):     0.312ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               U3/att_o_0 (FF)
+  Destination:          U6/D_DAC_s_0 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      5.033ns (Levels of Logic = 2)
+  Clock Path Skew:      0.430ns (0.996 - 0.566)
   Source Clock:         DCM_CLK_s rising at 0.000ns
-  Destination Clock:    DCM_CLK_s rising at 10.000ns
-  Clock Uncertainty:    0.095ns
+  Destination Clock:    DCM_CLK_s rising at 5.000ns
+  Clock Uncertainty:    0.085ns
 
-  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.085ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
+    Discrete Jitter (DJ):       0.155ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: U5/read_addr_s_0 to U5/read_addr_s_3
+  Maximum Data Path at Slow Process Corner: U3/att_o_0 to U6/D_DAC_s_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y46.AQ      Tcko                  0.391   U5/read_addr_s<3>
-                                                       U5/read_addr_s_0
-    SLICE_X18Y44.A5      net (fanout=27)       1.202   U5/read_addr_s<0>
-    SLICE_X18Y44.COUT    Topcya                0.395   U5/D_SRAM_o_s<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_lut<0>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.COUT    Tbyp                  0.076   U3/D_mem_o<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.DMUX    Tcind                 0.272   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-    SLICE_X16Y44.B3      net (fanout=1)        1.391   U5/read_addr_s[14]_GND_38_o_add_14_OUT<11>
-    SLICE_X16Y44.COUT    Topcyb                0.380   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_lut<5>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y46.A2      net (fanout=16)       0.879   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y46.AMUX    Topaa                 0.370   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<6>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_lut<3>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<6>
-    SLICE_X21Y46.D4      net (fanout=1)        0.842   U5/read_addr_s[14]_GND_38_o_mux_15_OUT<3>
-    SLICE_X21Y46.CLK     Tas                   0.322   U5/read_addr_s<3>
-                                                       U5/Mmux_mem_read_state[1]_read_addr_s[14]_wide_mux_24_OUT91
-                                                       U5/read_addr_s_3
+    SLICE_X8Y46.AQ       Tcko                  0.447   U3/att_o<3>
+                                                       U3/att_o_0
+    SLICE_X9Y46.A6       net (fanout=11)       0.633   U3/att_o<0>
+    SLICE_X9Y46.A        Tilo                  0.259   U5/D_DAC_s_7_1
+                                                       lut546_57
+    SLICE_X9Y48.D3       net (fanout=2)        0.952   lut546_57
+    SLICE_X9Y48.DMUX     Tilo                  0.313   ][2527_74
+                                                       lut579_89
+    OLOGIC_X11Y60.D1     net (fanout=1)        1.626   ][2535_90
+    OLOGIC_X11Y60.CLK0   Todck                 0.803   U6/D_DAC_s<0>
+                                                       U6/D_DAC_s_0
     -------------------------------------------------  ---------------------------
-    Total                                      6.526ns (2.206ns logic, 4.320ns route)
-                                                       (33.8% logic, 66.2% route)
+    Total                                      5.033ns (1.822ns logic, 3.211ns route)
+                                                       (36.2% logic, 63.8% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.447ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               U5/read_addr_s_0 (FF)
-  Destination:          U5/read_addr_s_3 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      6.458ns (Levels of Logic = 6)
-  Clock Path Skew:      0.000ns
+Slack (setup path):     0.334ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               U5/D_DAC_s_12_1 (FF)
+  Destination:          U6/D_DAC_s_0 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      5.010ns (Levels of Logic = 2)
+  Clock Path Skew:      0.429ns (0.996 - 0.567)
   Source Clock:         DCM_CLK_s rising at 0.000ns
-  Destination Clock:    DCM_CLK_s rising at 10.000ns
-  Clock Uncertainty:    0.095ns
+  Destination Clock:    DCM_CLK_s rising at 5.000ns
+  Clock Uncertainty:    0.085ns
 
-  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.085ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
+    Discrete Jitter (DJ):       0.155ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: U5/read_addr_s_0 to U5/read_addr_s_3
+  Maximum Data Path at Slow Process Corner: U5/D_DAC_s_12_1 to U6/D_DAC_s_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y46.AQ      Tcko                  0.391   U5/read_addr_s<3>
-                                                       U5/read_addr_s_0
-    SLICE_X18Y44.A5      net (fanout=27)       1.202   U5/read_addr_s<0>
-    SLICE_X18Y44.COUT    Topcya                0.395   U5/D_SRAM_o_s<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_lut<0>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.COUT    Tbyp                  0.076   U3/D_mem_o<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.DMUX    Tcind                 0.272   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-    SLICE_X16Y44.B3      net (fanout=1)        1.391   U5/read_addr_s[14]_GND_38_o_add_14_OUT<11>
-    SLICE_X16Y44.COUT    Topcyb                0.312   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_lutdi5
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y46.A2      net (fanout=16)       0.879   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y46.AMUX    Topaa                 0.370   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<6>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_lut<3>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<6>
-    SLICE_X21Y46.D4      net (fanout=1)        0.842   U5/read_addr_s[14]_GND_38_o_mux_15_OUT<3>
-    SLICE_X21Y46.CLK     Tas                   0.322   U5/read_addr_s<3>
-                                                       U5/Mmux_mem_read_state[1]_read_addr_s[14]_wide_mux_24_OUT91
-                                                       U5/read_addr_s_3
+    SLICE_X8Y47.CQ       Tcko                  0.447   U5/D_DAC_s_10_1
+                                                       U5/D_DAC_s_12_1
+    SLICE_X9Y46.A2       net (fanout=3)        0.610   U5/D_DAC_s_12_1
+    SLICE_X9Y46.A        Tilo                  0.259   U5/D_DAC_s_7_1
+                                                       lut546_57
+    SLICE_X9Y48.D3       net (fanout=2)        0.952   lut546_57
+    SLICE_X9Y48.DMUX     Tilo                  0.313   ][2527_74
+                                                       lut579_89
+    OLOGIC_X11Y60.D1     net (fanout=1)        1.626   ][2535_90
+    OLOGIC_X11Y60.CLK0   Todck                 0.803   U6/D_DAC_s<0>
+                                                       U6/D_DAC_s_0
     -------------------------------------------------  ---------------------------
-    Total                                      6.458ns (2.138ns logic, 4.320ns route)
-                                                       (33.1% logic, 66.9% route)
+    Total                                      5.010ns (1.822ns logic, 3.188ns route)
+                                                       (36.4% logic, 63.6% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.453ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               U5/read_addr_s_0 (FF)
-  Destination:          U5/read_addr_s_3 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      6.452ns (Levels of Logic = 7)
-  Clock Path Skew:      0.000ns
+Slack (setup path):     0.337ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               U5/D_DAC_s_13_1 (FF)
+  Destination:          U6/D_DAC_s_0 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      5.007ns (Levels of Logic = 2)
+  Clock Path Skew:      0.429ns (0.996 - 0.567)
   Source Clock:         DCM_CLK_s rising at 0.000ns
-  Destination Clock:    DCM_CLK_s rising at 10.000ns
-  Clock Uncertainty:    0.095ns
+  Destination Clock:    DCM_CLK_s rising at 5.000ns
+  Clock Uncertainty:    0.085ns
 
-  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.085ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
+    Discrete Jitter (DJ):       0.155ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: U5/read_addr_s_0 to U5/read_addr_s_3
+  Maximum Data Path at Slow Process Corner: U5/D_DAC_s_13_1 to U6/D_DAC_s_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y46.AQ      Tcko                  0.391   U5/read_addr_s<3>
-                                                       U5/read_addr_s_0
-    SLICE_X18Y44.A5      net (fanout=27)       1.202   U5/read_addr_s<0>
-    SLICE_X18Y44.COUT    Topcya                0.395   U5/D_SRAM_o_s<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_lut<0>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.COUT    Tbyp                  0.076   U3/D_mem_o<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.DMUX    Tcind                 0.272   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-    SLICE_X16Y44.B3      net (fanout=1)        1.391   U5/read_addr_s[14]_GND_38_o_add_14_OUT<11>
-    SLICE_X16Y44.COUT    Topcyb                0.380   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_lut<5>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y45.B5      net (fanout=16)       0.590   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y45.COUT    Topcyb                0.380   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<2>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_lut<0>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<2>
-    SLICE_X16Y46.CIN     net (fanout=1)        0.003   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<2>
-    SLICE_X16Y46.AMUX    Tcina                 0.202   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<6>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<6>
-    SLICE_X21Y46.D4      net (fanout=1)        0.842   U5/read_addr_s[14]_GND_38_o_mux_15_OUT<3>
-    SLICE_X21Y46.CLK     Tas                   0.322   U5/read_addr_s<3>
-                                                       U5/Mmux_mem_read_state[1]_read_addr_s[14]_wide_mux_24_OUT91
-                                                       U5/read_addr_s_3
+    SLICE_X8Y47.AQ       Tcko                  0.447   U5/D_DAC_s_10_1
+                                                       U5/D_DAC_s_13_1
+    SLICE_X9Y46.A1       net (fanout=3)        0.607   U5/D_DAC_s_13_1
+    SLICE_X9Y46.A        Tilo                  0.259   U5/D_DAC_s_7_1
+                                                       lut546_57
+    SLICE_X9Y48.D3       net (fanout=2)        0.952   lut546_57
+    SLICE_X9Y48.DMUX     Tilo                  0.313   ][2527_74
+                                                       lut579_89
+    OLOGIC_X11Y60.D1     net (fanout=1)        1.626   ][2535_90
+    OLOGIC_X11Y60.CLK0   Todck                 0.803   U6/D_DAC_s<0>
+                                                       U6/D_DAC_s_0
     -------------------------------------------------  ---------------------------
-    Total                                      6.452ns (2.418ns logic, 4.034ns route)
-                                                       (37.5% logic, 62.5% route)
+    Total                                      5.007ns (1.822ns logic, 3.185ns route)
+                                                       (36.4% logic, 63.6% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point U5/read_addr_s_12 (SLICE_X16Y49.A3), 20008 paths
+Paths for end point U6/D_DAC_s_8 (OLOGIC_X9Y60.D1), 8 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     3.407ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               U5/read_addr_s_0 (FF)
-  Destination:          U5/read_addr_s_12 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      6.535ns (Levels of Logic = 8)
-  Clock Path Skew:      0.037ns (0.580 - 0.543)
+Slack (setup path):     0.381ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               U3/att_o_0 (FF)
+  Destination:          U6/D_DAC_s_8 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.958ns (Levels of Logic = 2)
+  Clock Path Skew:      0.424ns (0.990 - 0.566)
   Source Clock:         DCM_CLK_s rising at 0.000ns
-  Destination Clock:    DCM_CLK_s rising at 10.000ns
-  Clock Uncertainty:    0.095ns
+  Destination Clock:    DCM_CLK_s rising at 5.000ns
+  Clock Uncertainty:    0.085ns
 
-  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.085ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
+    Discrete Jitter (DJ):       0.155ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: U5/read_addr_s_0 to U5/read_addr_s_12
+  Maximum Data Path at Slow Process Corner: U3/att_o_0 to U6/D_DAC_s_8
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y46.AQ      Tcko                  0.391   U5/read_addr_s<3>
-                                                       U5/read_addr_s_0
-    SLICE_X18Y44.A5      net (fanout=27)       1.202   U5/read_addr_s<0>
-    SLICE_X18Y44.COUT    Topcya                0.395   U5/D_SRAM_o_s<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_lut<0>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.COUT    Tbyp                  0.076   U3/D_mem_o<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.DMUX    Tcind                 0.272   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-    SLICE_X16Y44.B3      net (fanout=1)        1.391   U5/read_addr_s[14]_GND_38_o_add_14_OUT<11>
-    SLICE_X16Y44.COUT    Topcyb                0.380   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_lut<5>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y46.A2      net (fanout=16)       0.879   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y46.COUT    Topcya                0.386   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<6>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_A91
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<6>
-    SLICE_X16Y47.CIN     net (fanout=1)        0.003   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<6>
-    SLICE_X16Y47.COUT    Tbyp                  0.076   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<10>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<10>
-    SLICE_X16Y48.CIN     net (fanout=1)        0.003   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<10>
-    SLICE_X16Y48.BMUX    Tcinb                 0.292   U3/fdiv_s<4>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_xor<14>
-    SLICE_X16Y49.A3      net (fanout=1)        0.494   U5/read_addr_s[14]_GND_38_o_mux_15_OUT<12>
-    SLICE_X16Y49.CLK     Tas                   0.289   U5/read_addr_s<14>
-                                                       U5/Mmux_mem_read_state[1]_read_addr_s[14]_wide_mux_24_OUT41
-                                                       U5/read_addr_s_12
+    SLICE_X8Y46.AQ       Tcko                  0.447   U3/att_o<3>
+                                                       U3/att_o_0
+    SLICE_X9Y46.A6       net (fanout=11)       0.633   U3/att_o<0>
+    SLICE_X9Y46.A        Tilo                  0.259   U5/D_DAC_s_7_1
+                                                       lut546_57
+    SLICE_X9Y46.B4       net (fanout=2)        0.944   lut546_57
+    SLICE_X9Y46.BMUX     Tilo                  0.313   U5/D_DAC_s_7_1
+                                                       lut547_58
+    OLOGIC_X9Y60.D1      net (fanout=1)        1.559   lut547_58
+    OLOGIC_X9Y60.CLK0    Todck                 0.803   U6/D_DAC_s<8>
+                                                       U6/D_DAC_s_8
     -------------------------------------------------  ---------------------------
-    Total                                      6.535ns (2.557ns logic, 3.978ns route)
-                                                       (39.1% logic, 60.9% route)
+    Total                                      4.958ns (1.822ns logic, 3.136ns route)
+                                                       (36.7% logic, 63.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.414ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               U5/read_addr_s_0 (FF)
-  Destination:          U5/read_addr_s_12 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      6.528ns (Levels of Logic = 8)
-  Clock Path Skew:      0.037ns (0.580 - 0.543)
+Slack (setup path):     0.403ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               U5/D_DAC_s_12_1 (FF)
+  Destination:          U6/D_DAC_s_8 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.935ns (Levels of Logic = 2)
+  Clock Path Skew:      0.423ns (0.990 - 0.567)
   Source Clock:         DCM_CLK_s rising at 0.000ns
-  Destination Clock:    DCM_CLK_s rising at 10.000ns
-  Clock Uncertainty:    0.095ns
+  Destination Clock:    DCM_CLK_s rising at 5.000ns
+  Clock Uncertainty:    0.085ns
 
-  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.085ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
+    Discrete Jitter (DJ):       0.155ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: U5/read_addr_s_0 to U5/read_addr_s_12
+  Maximum Data Path at Slow Process Corner: U5/D_DAC_s_12_1 to U6/D_DAC_s_8
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y46.AQ      Tcko                  0.391   U5/read_addr_s<3>
-                                                       U5/read_addr_s_0
-    SLICE_X18Y44.A5      net (fanout=27)       1.202   U5/read_addr_s<0>
-    SLICE_X18Y44.COUT    Topcya                0.395   U5/D_SRAM_o_s<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_lut<0>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<3>
-    SLICE_X18Y45.COUT    Tbyp                  0.076   U3/D_mem_o<13>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.CIN     net (fanout=1)        0.003   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<7>
-    SLICE_X18Y46.DMUX    Tcind                 0.272   U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-                                                       U5/Madd_read_addr_s[14]_GND_38_o_add_14_OUT_cy<11>
-    SLICE_X16Y44.B3      net (fanout=1)        1.391   U5/read_addr_s[14]_GND_38_o_add_14_OUT<11>
-    SLICE_X16Y44.COUT    Topcyb                0.380   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_lut<5>
-                                                       U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y46.A2      net (fanout=16)       0.879   U5/Mcompar_max_rd_addr_i[14]_read_addr_s[14]_LessThan_11_o_cy<7>
-    SLICE_X16Y46.COUT    Topcya                0.379   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<6>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_lut<3>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<6>
-    SLICE_X16Y47.CIN     net (fanout=1)        0.003   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<6>
-    SLICE_X16Y47.COUT    Tbyp                  0.076   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<10>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<10>
-    SLICE_X16Y48.CIN     net (fanout=1)        0.003   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<10>
-    SLICE_X16Y48.BMUX    Tcinb                 0.292   U3/fdiv_s<4>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_xor<14>
-    SLICE_X16Y49.A3      net (fanout=1)        0.494   U5/read_addr_s[14]_GND_38_o_mux_15_OUT<12>
-    SLICE_X16Y49.CLK     Tas                   0.289   U5/read_addr_s<14>
-                                                       U5/Mmux_mem_read_state[1]_read_addr_s[14]_wide_mux_24_OUT41
-                                                       U5/read_addr_s_12
+    SLICE_X8Y47.CQ       Tcko                  0.447   U5/D_DAC_s_10_1
+                                                       U5/D_DAC_s_12_1
+    SLICE_X9Y46.A2       net (fanout=3)        0.610   U5/D_DAC_s_12_1
+    SLICE_X9Y46.A        Tilo                  0.259   U5/D_DAC_s_7_1
+                                                       lut546_57
+    SLICE_X9Y46.B4       net (fanout=2)        0.944   lut546_57
+    SLICE_X9Y46.BMUX     Tilo                  0.313   U5/D_DAC_s_7_1
+                                                       lut547_58
+    OLOGIC_X9Y60.D1      net (fanout=1)        1.559   lut547_58
+    OLOGIC_X9Y60.CLK0    Todck                 0.803   U6/D_DAC_s<8>
+                                                       U6/D_DAC_s_8
     -------------------------------------------------  ---------------------------
-    Total                                      6.528ns (2.550ns logic, 3.978ns route)
-                                                       (39.1% logic, 60.9% route)
+    Total                                      4.935ns (1.822ns logic, 3.113ns route)
+                                                       (36.9% logic, 63.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     3.466ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               U5/read_addr_s_2 (FF)
-  Destination:          U5/read_addr_s_12 (FF)
-  Requirement:          10.000ns
-  Data Path Delay:      6.476ns (Levels of Logic = 6)
-  Clock Path Skew:      0.037ns (0.580 - 0.543)
+Slack (setup path):     0.406ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               U5/D_DAC_s_13_1 (FF)
+  Destination:          U6/D_DAC_s_8 (FF)
+  Requirement:          5.000ns
+  Data Path Delay:      4.932ns (Levels of Logic = 2)
+  Clock Path Skew:      0.423ns (0.990 - 0.567)
   Source Clock:         DCM_CLK_s rising at 0.000ns
-  Destination Clock:    DCM_CLK_s rising at 10.000ns
-  Clock Uncertainty:    0.095ns
+  Destination Clock:    DCM_CLK_s rising at 5.000ns
+  Clock Uncertainty:    0.085ns
 
-  Clock Uncertainty:          0.095ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.085ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.177ns
+    Discrete Jitter (DJ):       0.155ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: U5/read_addr_s_2 to U5/read_addr_s_12
+  Maximum Data Path at Slow Process Corner: U5/D_DAC_s_13_1 to U6/D_DAC_s_8
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X21Y46.CQ      Tcko                  0.391   U5/read_addr_s<3>
-                                                       U5/read_addr_s_2
-    SLICE_X14Y44.C2      net (fanout=26)       1.241   U5/read_addr_s<2>
-    SLICE_X14Y44.CMUX    Tilo                  0.251   U5/GND_38_o_GND_38_o_add_12_OUT<3>
-                                                       U5/Madd_GND_38_o_GND_38_o_add_12_OUT2
-    SLICE_X14Y44.DX      net (fanout=2)        1.503   U5/Madd_GND_38_o_GND_38_o_add_12_OUT2
-    SLICE_X14Y44.COUT    Tdxcy                 0.097   U5/GND_38_o_GND_38_o_add_12_OUT<3>
-                                                       U5/Madd_GND_38_o_GND_38_o_add_12_OUT_cy<0>_2
-    SLICE_X14Y45.CIN     net (fanout=1)        0.003   U5/Madd_GND_38_o_GND_38_o_add_12_OUT_cy<0>3
-    SLICE_X14Y45.DQ      Tito_logic            0.676   U5/GND_38_o_GND_38_o_add_12_OUT<7>
-                                                       U5/Madd_GND_38_o_GND_38_o_add_12_OUT_cy<0>_6
-                                                       U5/GND_38_o_GND_38_o_add_12_OUT<7>_rt
-    SLICE_X16Y47.A1      net (fanout=1)        0.850   U5/GND_38_o_GND_38_o_add_12_OUT<7>
-    SLICE_X16Y47.COUT    Topcya                0.386   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<10>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_A131
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<10>
-    SLICE_X16Y48.CIN     net (fanout=1)        0.003   U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_cy<10>
-    SLICE_X16Y48.BMUX    Tcinb                 0.292   U3/fdiv_s<4>
-                                                       U5/Mmux_read_addr_s[14]_GND_38_o_mux_15_OUT_rs_xor<14>
-    SLICE_X16Y49.A3      net (fanout=1)        0.494   U5/read_addr_s[14]_GND_38_o_mux_15_OUT<12>
-    SLICE_X16Y49.CLK     Tas                   0.289   U5/read_addr_s<14>
-                                                       U5/Mmux_mem_read_state[1]_read_addr_s[14]_wide_mux_24_OUT41
-                                                       U5/read_addr_s_12
+    SLICE_X8Y47.AQ       Tcko                  0.447   U5/D_DAC_s_10_1
+                                                       U5/D_DAC_s_13_1
+    SLICE_X9Y46.A1       net (fanout=3)        0.607   U5/D_DAC_s_13_1
+    SLICE_X9Y46.A        Tilo                  0.259   U5/D_DAC_s_7_1
+                                                       lut546_57
+    SLICE_X9Y46.B4       net (fanout=2)        0.944   lut546_57
+    SLICE_X9Y46.BMUX     Tilo                  0.313   U5/D_DAC_s_7_1
+                                                       lut547_58
+    OLOGIC_X9Y60.D1      net (fanout=1)        1.559   lut547_58
+    OLOGIC_X9Y60.CLK0    Todck                 0.803   U6/D_DAC_s<8>
+                                                       U6/D_DAC_s_8
     -------------------------------------------------  ---------------------------
-    Total                                      6.476ns (2.382ns logic, 4.094ns route)
-                                                       (36.8% logic, 63.2% route)
+    Total                                      4.932ns (1.822ns logic, 3.110ns route)
+                                                       (36.9% logic, 63.1% route)
 
 --------------------------------------------------------------------------------
 
-Hold Paths: PERIOD analysis for net "U1/clkout0" derived from
- NET "U1/clkin1" PERIOD = 10 ns HIGH 50%;
-
+Hold Paths: TS_U1_clkout0 = PERIOD TIMEGRP "U1_clkout0" TS_CLK_i / 2 HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram (RAMB16_X1Y22.DIA5), 1 path
+Paths for end point U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram (RAMB16_X1Y18.DIA1), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.356ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               U5/D_SRAM_o_s_10 (FF)
-  Destination:          U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram (RAM)
+Slack (hold path):      0.328ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               U5/D_SRAM_o_s_6 (FF)
+  Destination:          U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.360ns (Levels of Logic = 0)
-  Clock Path Skew:      0.004ns (0.076 - 0.072)
-  Source Clock:         DCM_CLK_s rising at 10.000ns
-  Destination Clock:    DCM_CLK_s rising at 10.000ns
+  Data Path Delay:      0.330ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.070 - 0.068)
+  Source Clock:         DCM_CLK_s rising at 5.000ns
+  Destination Clock:    DCM_CLK_s rising at 5.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: U5/D_SRAM_o_s_10 to U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
+  Minimum Data Path at Fast Process Corner: U5/D_SRAM_o_s_6 to U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y44.AQ      Tcko                  0.200   U5/D_SRAM_o_s<13>
-                                                       U5/D_SRAM_o_s_10
-    RAMB16_X1Y22.DIA5    net (fanout=16)       0.213   U5/D_SRAM_o_s<10>
-    RAMB16_X1Y22.CLKA    Trckd_DIA   (-Th)     0.053   U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
-                                                       U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[21].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
+    SLICE_X17Y36.AQ      Tcko                  0.198   U5/D_SRAM_o_s<9>
+                                                       U5/D_SRAM_o_s_6
+    RAMB16_X1Y18.DIA1    net (fanout=16)       0.185   U5/D_SRAM_o_s<6>
+    RAMB16_X1Y18.CLKA    Trckd_DIA   (-Th)     0.053   U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
+                                                       U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
     -------------------------------------------------  ---------------------------
-    Total                                      0.360ns (0.147ns logic, 0.213ns route)
-                                                       (40.8% logic, 59.2% route)
+    Total                                      0.330ns (0.145ns logic, 0.185ns route)
+                                                       (43.9% logic, 56.1% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram (RAMB16_X1Y24.ADDRB8), 1 path
+Paths for end point U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram (RAMB16_X1Y10.WEA1), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.358ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               U5/read_addr_s_5 (FF)
-  Destination:          U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram (RAM)
+Slack (hold path):      0.332ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               U5/mem_wr_ack_s (FF)
+  Destination:          U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.425ns (Levels of Logic = 0)
-  Clock Path Skew:      0.067ns (0.363 - 0.296)
-  Source Clock:         DCM_CLK_s rising at 10.000ns
-  Destination Clock:    DCM_CLK_s rising at 10.000ns
+  Data Path Delay:      0.341ns (Levels of Logic = 0)
+  Clock Path Skew:      0.009ns (0.070 - 0.061)
+  Source Clock:         DCM_CLK_s rising at 5.000ns
+  Destination Clock:    DCM_CLK_s rising at 5.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: U5/read_addr_s_5 to U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
+  Minimum Data Path at Fast Process Corner: U5/mem_wr_ack_s to U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X17Y47.BQ      Tcko                  0.198   U5/read_addr_s<7>
-                                                       U5/read_addr_s_5
-    RAMB16_X1Y24.ADDRB8  net (fanout=26)       0.293   U5/read_addr_s<5>
-    RAMB16_X1Y24.CLKB    Trckc_ADDRB (-Th)     0.066   U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
-                                                       U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
+    SLICE_X18Y23.AMUX    Tshcko                0.238   lut3059_745
+                                                       U5/mem_wr_ack_s
+    RAMB16_X1Y10.WEA1    net (fanout=91)       0.156   U5/mem_wr_ack_s
+    RAMB16_X1Y10.CLKA    Trckc_WEA   (-Th)     0.053   U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
+                                                       U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
     -------------------------------------------------  ---------------------------
-    Total                                      0.425ns (0.132ns logic, 0.293ns route)
-                                                       (31.1% logic, 68.9% route)
+    Total                                      0.341ns (0.185ns logic, 0.156ns route)
+                                                       (54.3% logic, 45.7% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram (RAMB16_X1Y24.DIA2), 1 path
+Paths for end point U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram (RAMB16_X1Y10.WEA3), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.364ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               U5/D_SRAM_o_s_7 (FF)
-  Destination:          U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram (RAM)
+Slack (hold path):      0.332ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               U5/mem_wr_ack_s (FF)
+  Destination:          U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram (RAM)
   Requirement:          0.000ns
-  Data Path Delay:      0.433ns (Levels of Logic = 0)
-  Clock Path Skew:      0.069ns (0.363 - 0.294)
-  Source Clock:         DCM_CLK_s rising at 10.000ns
-  Destination Clock:    DCM_CLK_s rising at 10.000ns
+  Data Path Delay:      0.341ns (Levels of Logic = 0)
+  Clock Path Skew:      0.009ns (0.070 - 0.061)
+  Source Clock:         DCM_CLK_s rising at 5.000ns
+  Destination Clock:    DCM_CLK_s rising at 5.000ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: U5/D_SRAM_o_s_7 to U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
+  Minimum Data Path at Fast Process Corner: U5/mem_wr_ack_s to U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y44.BQ      Tcko                  0.198   U5/D_SRAM_o_s<9>
-                                                       U5/D_SRAM_o_s_7
-    RAMB16_X1Y24.DIA2    net (fanout=16)       0.288   U5/D_SRAM_o_s<7>
-    RAMB16_X1Y24.CLKA    Trckd_DIA   (-Th)     0.053   U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
-                                                       U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[23].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
+    SLICE_X18Y23.AMUX    Tshcko                0.238   lut3059_745
+                                                       U5/mem_wr_ack_s
+    RAMB16_X1Y10.WEA3    net (fanout=91)       0.156   U5/mem_wr_ack_s
+    RAMB16_X1Y10.CLKA    Trckc_WEA   (-Th)     0.053   U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
+                                                       U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[13].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram
     -------------------------------------------------  ---------------------------
-    Total                                      0.433ns (0.145ns logic, 0.288ns route)
-                                                       (33.5% logic, 66.5% route)
+    Total                                      0.341ns (0.185ns logic, 0.156ns route)
+                                                       (54.3% logic, 45.7% route)
 
 --------------------------------------------------------------------------------
 
-Component Switching Limit Checks: PERIOD analysis for net "U1/clkout0" derived from
- NET "U1/clkin1" PERIOD = 10 ns HIGH 50%;
-
+Component Switching Limit Checks: TS_U1_clkout0 = PERIOD TIMEGRP "U1_clkout0" TS_CLK_i / 2 HIGH 50%;
 --------------------------------------------------------------------------------
-Slack: 6.876ns (period - min period limit)
-  Period: 10.000ns
+Slack: 1.876ns (period - min period limit)
+  Period: 5.000ns
   Min period limit: 3.124ns (320.102MHz) (Trper_CLKA(Fmax))
-  Physical resource: U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram/CLKA
-  Logical resource: U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram/CLKA
-  Location pin: RAMB16_X0Y20.CLKA
+  Physical resource: U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram/CLKA
+  Logical resource: U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram/CLKA
+  Location pin: RAMB16_X0Y10.CLKA
   Clock network: DCM_CLK_s
 --------------------------------------------------------------------------------
-Slack: 6.876ns (period - min period limit)
-  Period: 10.000ns
+Slack: 1.876ns (period - min period limit)
+  Period: 5.000ns
   Min period limit: 3.124ns (320.102MHz) (Trper_CLKB(Fmax))
-  Physical resource: U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram/CLKB
-  Logical resource: U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram/CLKB
-  Location pin: RAMB16_X0Y20.CLKB
+  Physical resource: U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram/CLKB
+  Logical resource: U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[9].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram/CLKB
+  Location pin: RAMB16_X0Y10.CLKB
   Clock network: DCM_CLK_s
 --------------------------------------------------------------------------------
-Slack: 6.876ns (period - min period limit)
-  Period: 10.000ns
+Slack: 1.876ns (period - min period limit)
+  Period: 5.000ns
   Min period limit: 3.124ns (320.102MHz) (Trper_CLKA(Fmax))
-  Physical resource: U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram/CLKA
-  Logical resource: U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[11].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram/CLKA
-  Location pin: RAMB16_X0Y22.CLKA
+  Physical resource: U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram/CLKA
+  Logical resource: U4/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[7].ram.r/s6_init.ram/SDP.SIMPLE_PRIM18.ram/CLKA
+  Location pin: RAMB16_X1Y2.CLKA
   Clock network: DCM_CLK_s
---------------------------------------------------------------------------------
-
-================================================================================
-Timing constraint: NET "CLK_dac_o" PERIOD = 10 ns HIGH 50%;
-For more information, see Period Analysis in the Timing Closure User Guide (UG612).
-
- 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
- 0 timing errors detected. (0 component switching limit errors)
 --------------------------------------------------------------------------------
 
 
 Derived Constraint Report
-Derived Constraints for U1/clkin1
+Derived Constraints for TS_CLK_i
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 |                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|U1/clkin1                      |     10.000ns|      3.334ns|      6.694ns|            0|            0|            0|       186206|
-| U1/clkout1                    |     10.000ns|      1.730ns|          N/A|            0|            0|            0|            0|
-| U1/clkout0                    |     10.000ns|      6.694ns|          N/A|            0|            0|       186206|            0|
+|TS_CLK_i                       |     10.000ns|      3.334ns|      9.426ns|            0|            0|            0|        18783|
+| TS_U1_clkout1                 |      5.000ns|      1.730ns|          N/A|            0|            0|            0|            0|
+| TS_U1_clkout0                 |      5.000ns|      4.713ns|          N/A|            0|            0|        18783|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -715,7 +570,7 @@ Clock to Setup on destination clock CLK_i
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK_i          |    6.694|         |         |         |
+CLK_i          |    4.713|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -724,23 +579,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 186206 paths, 0 nets, and 2577 connections
+Constraints cover 18783 paths, 0 nets, and 2650 connections
 
 Design statistics:
-   Minimum period:   6.694ns{1}   (Maximum frequency: 149.388MHz)
+   Minimum period:   4.713ns{1}   (Maximum frequency: 212.179MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Mon Mar 27 12:46:33 2017 
+Analysis completed Tue Mar 28 20:45:18 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 397 MB
+Peak Memory Usage: 403 MB
 
 
 

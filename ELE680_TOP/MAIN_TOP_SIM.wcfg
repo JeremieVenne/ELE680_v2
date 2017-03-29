@@ -20,7 +20,7 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="44" />
+   <WVObjectSize size="46" />
    <wvobject fp_name="/main_top_tb/clk_i" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk_i</obj_property>
       <obj_property name="ObjectShortName">clk_i</obj_property>
@@ -179,17 +179,27 @@
    <wvobject fp_name="/main_top_tb/uut/U5/read_addr_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">read_addr_s[14:0]</obj_property>
       <obj_property name="ObjectShortName">read_addr_s[14:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_top_tb/uut/U5/inc_overflow" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">inc_overflow[14:0]</obj_property>
+      <obj_property name="ObjectShortName">inc_overflow[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/main_top_tb/uut/U5/overflow_reset" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">overflow_reset[14:0]</obj_property>
+      <obj_property name="ObjectShortName">overflow_reset[14:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/main_top_tb/uut/U5/future_read_addr_s" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">future_read_addr_s[14:0]</obj_property>
       <obj_property name="ObjectShortName">future_read_addr_s[14:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/main_top_tb/uut/U5/mem_rd_addr_o" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">mem_rd_addr_o[14:0]</obj_property>
       <obj_property name="ObjectShortName">mem_rd_addr_o[14:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/main_top_tb/uut/U4/addrb" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">addrb[14:0]</obj_property>

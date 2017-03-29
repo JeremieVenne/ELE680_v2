@@ -56,12 +56,12 @@ architecture Behavioral of BRAM_ctrlr is
 
 TYPE mem_write_state_type IS (IDLE, send_read_req, write_bram, ERROR); 
 signal mem_write_state : mem_write_state_type;
-TYPE mem_read_state_type IS (DAC_GEN_STOP, DAC_GEN_RUN, SRAM_to_DAC); --, set_addr
+TYPE mem_read_state_type IS (DAC_GEN_STOP, DAC_GEN_RUN, SRAM_to_DAC, SRAM_to_DAC_2); --, set_addr
 signal mem_read_state : mem_read_state_type;
 signal D_SRAM_i_s, D_SRAM_o_s : std_logic_vector(13 downto 0);
 signal wr_addr_s : std_logic_vector(14 downto 0);
 signal wr_en_s : std_logic_vector(0 downto 0);
-signal read_addr_s,future_read_addr_s : unsigned (14 downto 0);
+signal read_addr_s,future_read_addr_s,overflow_s, new_start_s : signed (15 downto 0);
 signal smp_rdy_past, mem_wr_ack_s : std_logic;
 signal D_DAC_s : std_logic_vector (13 downto 0);
 signal debug_s, led_s : std_logic_vector (11 downto 0);
@@ -106,6 +106,7 @@ begin
 						future_read_addr_s <= (others=>'0');
 						fdiv_cnt_s <= "00001";
 						IF (GEN_RUN_i = '1') THEN
+							future_read_addr_s <= read_addr_s + signed(inc_rd_addr_i);
 							mem_read_state <= SRAM_to_DAC;
 						end IF;
 					WHEN  SRAM_to_DAC =>
@@ -113,11 +114,18 @@ begin
 							D_DAC_s <= D_SRAM_i;
 							IF (fdiv_cnt_s = unsigned(fdiv_i)) THEN
 								fdiv_cnt_s <= "00001";
-								IF (read_addr_s + unsigned(inc_rd_addr_i) > (unsigned(max_rd_addr_i))) THEN
-									read_addr_s <= read_addr_s - unsigned(max_rd_addr_i) + unsigned(inc_rd_addr_i) - 1;
+								overflow_s <= signed('0' & max_rd_addr_i) - signed('0' & inc_rd_addr_i);
+								new_start_s <= overflow_s + 1;
+								IF (read_addr_s >= overflow_s) THEN
+									read_addr_s <= read_addr_s - new_start_s;
 								ELSE
-									read_addr_s <= read_addr_s + unsigned(inc_rd_addr_i);
+									read_addr_s <= read_addr_s + signed(inc_rd_addr_i);
 								END IF;
+--								IF (read_addr_s + unsigned(inc_rd_addr_i) > (unsigned(max_rd_addr_i))) THEN
+--									read_addr_s <= read_addr_s - unsigned(max_rd_addr_i) + unsigned(inc_rd_addr_i) - 1;
+--								ELSE
+--									read_addr_s <= read_addr_s + unsigned(inc_rd_addr_i);
+--								END IF;
 							ELSE
 								fdiv_cnt_s <= fdiv_cnt_s + 1;
 							end IF;
@@ -134,7 +142,7 @@ begin
 	D_SRAM_o <= D_SRAM_o_s;
 	D_DAC_o <=  D_DAC_s;
 	mem_wr_addr_o <= wr_addr_s;
-	mem_rd_addr_o <= std_logic_vector(read_addr_s);
+	mem_rd_addr_o <= std_logic_vector(read_addr_s(14 downto 0));
 	WEN_o <= wr_en_s;
 	mem_wr_ack_o <= mem_wr_ack_s;
 end Behavioral;

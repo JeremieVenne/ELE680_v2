@@ -33,14 +33,14 @@ use UNISIM.vcomponents.all;
 --use UNISIM.VComponents.all;
 
 entity Main_TOP is
-	 Generic( clk_period : integer:= 10); --ns
+	 Generic( clk_period : integer:= 5); --ns
     Port ( D_ft_io : inout  STD_LOGIC_VECTOR (7 downto 0);
 			  RXF_i : in  STD_LOGIC;
            TXE_i : in  STD_LOGIC;
            RST_i : in  STD_LOGIC;
            CLK_i : in  STD_LOGIC;
            D_o : out  STD_LOGIC_VECTOR (11 downto 0);
-			  LED_o : out  STD_LOGIC_VECTOR (11 downto 0);
+			  --LED_o : out  STD_LOGIC_VECTOR (11 downto 0);
 			  DEBUG_o : out  STD_LOGIC_VECTOR (11 downto 0);
 			  RD_o : out  STD_LOGIC;
            WR_o : out  STD_LOGIC;
@@ -89,8 +89,8 @@ architecture Behavioral of Main_TOP is
 				  ft_wr_done_i : in  STD_LOGIC;
 				  ft_rd_done_i : in  STD_LOGIC;
 				  ft_wr_en_o : out  STD_LOGIC;
-				  DEBUG_o : out STD_LOGIC_VECTOR (11 downto 0);
-				  LED_o : out STD_LOGIC_VECTOR (11 downto 0);
+				  --DEBUG_o : out STD_LOGIC_VECTOR (11 downto 0);
+				  --LED_o : out STD_LOGIC_VECTOR (11 downto 0);
 				  RST_i : in  STD_LOGIC;
 				  CLK_i : in  STD_LOGIC);
 	END COMPONENT;
@@ -204,8 +204,8 @@ BEGIN
 		ft_wr_done_i => ft_wr_done_s,
 		ft_rd_done_i => ft_rd_done_s,
 		ft_wr_en_o => ft_wr_en_s,
-		DEBUG_o => debug_s,
-	   LED_o => led_s,
+		--DEBUG_o => debug_s,
+	   --LED_o => led_s,
 		RST_i => RST_i,
 		CLK_i => DCM_CLK_s
 		);
@@ -248,9 +248,9 @@ BEGIN
            RST_i =>RST_i,
            CLK_i =>DCM_CLK_s
 		);
-LED_o <= wr_addr_s (11 downto 0) when (D_io_s = x"81") else (others=>'0');
+--LED_o <= wr_addr_s (11 downto 0) when (D_io_s = x"81") else (others=>'0');
 --LED_o <= mem_rd_addr_s (11 downto 0) when (D_io_s = x"84") else (others=>'0');
-DEBUG_o <= (others=>'0');
+DEBUG_o <= D_DAC_s(13 downto 2);--(others=>'1');--
 
 
 END Behavioral;

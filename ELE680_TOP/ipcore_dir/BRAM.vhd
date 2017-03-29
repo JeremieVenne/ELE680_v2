@@ -105,7 +105,7 @@ END COMPONENT;
       c_interface_type => 0,
       c_load_init_file => 0,
       c_mem_type => 1,
-      c_mux_pipeline_stages => 0,
+      c_mux_pipeline_stages => 1,
       c_prim_type => 1,
       c_read_depth_a => 32000,
       c_read_depth_b => 32000,

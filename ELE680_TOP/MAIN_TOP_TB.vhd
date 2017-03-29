@@ -47,7 +47,7 @@ ARCHITECTURE behavior OF MAIN_TOP_TB IS
          RST_i : IN  std_logic;
          CLK_i : IN  std_logic;
          D_o : OUT  std_logic_vector(11 downto 0);
-         LED_o : OUT  std_logic_vector(11 downto 0);
+         --LED_o : OUT  std_logic_vector(11 downto 0);
          DEBUG_o : OUT  std_logic_vector(11 downto 0);
          RD_o : OUT  std_logic;
          WR_o : OUT  std_logic;
@@ -67,7 +67,7 @@ ARCHITECTURE behavior OF MAIN_TOP_TB IS
 
  	--Outputs
    signal D_o : std_logic_vector(11 downto 0);
-   signal LED_o : std_logic_vector(11 downto 0);
+   --signal LED_o : std_logic_vector(11 downto 0);
    signal DEBUG_o : std_logic_vector(11 downto 0);
    signal RD_o : std_logic;
    signal WR_o : std_logic;
@@ -86,7 +86,7 @@ ARCHITECTURE behavior OF MAIN_TOP_TB IS
 	constant arret 				: trame2 := (x"71",x"83",x"01",x"00",x"00");
 	constant demarrage 			: trame2 := (x"71",x"84",x"01",x"00",x"00");
 	constant attenuation 		: trame2 := (x"71",x"85",x"01",x"00",x"00");
-	constant saut 					: trame2 := (x"71",x"86",x"01",x"00",x"07");
+	constant saut 					: trame2 := (x"71",x"86",x"01",x"00",x"05");
 	constant diviseur 			: trame2 := (x"71",x"87",x"01",x"00",x"01");
 
  
@@ -101,7 +101,7 @@ BEGIN
           RST_i => RST_i,
           CLK_i => CLK_i,
           D_o => D_o,
-          LED_o => LED_o,
+          --LED_o => LED_o,
           DEBUG_o => DEBUG_o,
           RD_o => RD_o,
           WR_o => WR_o,

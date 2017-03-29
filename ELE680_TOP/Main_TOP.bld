@@ -15,13 +15,16 @@ Done.
 Annotating constraints to design from ucf file "IOPinout.ucf" ...
 Resolving constraint associations...
 Checking Constraint Associations...
-INFO:ConstraintSystem - The Period constraint <NET "CLK_i" PERIOD = 10000 ps;>
-   [IOPinout.ucf(5)], is specified using the Net Period method which is not
-   recommended. Please use the Timespec PERIOD method.
+INFO:ConstraintSystem:178 - TNM 'CLK_i', used in period specification
+   'TS_CLK_i', was traced into PLL_ADV instance PLL_ADV. The following new TNM
+   groups and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT1: <TIMESPEC TS_U1_clkout1 = PERIOD "U1_clkout1" TS_CLK_i / 2 PHASE
+   2500 ps HIGH 50%>
 
-INFO:ConstraintSystem - The Period constraint <NET "CLK_dac_o" PERIOD = 10 ns;>
-   [IOPinout.ucf(107)], is specified using the Net Period method which is not
-   recommended. Please use the Timespec PERIOD method.
+INFO:ConstraintSystem:178 - TNM 'CLK_i', used in period specification
+   'TS_CLK_i', was traced into PLL_ADV instance PLL_ADV. The following new TNM
+   groups and period specifications were generated at the PLL_ADV output(s): 
+   CLKOUT0: <TIMESPEC TS_U1_clkout0 = PERIOD "U1_clkout0" TS_CLK_i / 2 HIGH 50%>
 
 Done...
 
@@ -38,7 +41,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 407664 kilobytes
+Total memory usage is 408216 kilobytes
 
 Writing NGD file "Main_TOP.ngd" ...
 Total REAL time to NGDBUILD completion:  3 sec

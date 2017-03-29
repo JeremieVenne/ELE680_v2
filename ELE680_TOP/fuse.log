@@ -17,7 +17,7 @@ WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE
 Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/MAIN_TOP_TB.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 187784 KB
+Fuse Memory Usage: 187772 KB
 Fuse CPU Usage: 2440 ms
 Compiling package standard
 Compiling package std_logic_1164
@@ -33,10 +33,10 @@ Compiling architecture oddr2_v of entity ODDR2 [\ODDR2("NONE",'0',"SYNC")(1,4,1,
 Compiling package std_logic_signed
 Compiling architecture ibufg_v of entity IBUFG [\IBUFG("DONT_CARE","0",true,"DEF...]
 Compiling architecture pll_adv_v of entity PLL_ADV [\PLL_ADV("HIGH","CLKFBOUT","NONE...]
-Compiling architecture pll_base_v of entity PLL_BASE [\PLL_BASE("HIGH",10,0.0,10.0,10,...]
+Compiling architecture pll_base_v of entity PLL_BASE [\PLL_BASE("HIGH",10,0.0,10.0,5,0...]
 Compiling architecture bufg_v of entity BUFG [bufg_default]
 Compiling architecture xilinx of entity DCM_block [dcm_block_default]
-Compiling architecture behavioral of entity FTDI_Block [\FTDI_Block(10)\]
+Compiling architecture behavioral of entity FTDI_Block [\FTDI_Block(5)\]
 Compiling architecture behavioral of entity Main_ctrlr [main_ctrlr_default]
 Compiling package std_logic_textio
 Compiling architecture output_stage_behavioral of entity BLK_MEM_GEN_V7_3_output_stage [\BLK_MEM_GEN_V7_3_output_stage("...]
@@ -47,12 +47,11 @@ Compiling architecture behavioral of entity BLK_MEM_GEN_V7_3 [\BLK_MEM_GEN_V7_3(
 Compiling architecture bram_a of entity BRAM [bram_default]
 Compiling architecture behavioral of entity BRAM_ctrlr [bram_ctrlr_default]
 Compiling architecture behavioral of entity DAC_Block [dac_block_default]
-Compiling architecture behavioral of entity Main_TOP [\Main_TOP(10)\]
+Compiling architecture behavioral of entity Main_TOP [\Main_TOP(5)\]
 Compiling architecture behavior of entity main_top_tb
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
 Compiled 47 VHDL Units
 Built simulation executable /home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/MAIN_TOP_TB_isim_beh.exe
-Fuse Memory Usage: 763436 KB
-Fuse CPU Usage: 3050 ms
-GCC CPU Usage: 220 ms
+Fuse Memory Usage: 763424 KB
+Fuse CPU Usage: 3000 ms
+GCC CPU Usage: 230 ms
