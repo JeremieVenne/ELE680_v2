@@ -36,7 +36,7 @@ entity Main_ctrlr is
 			  fdiv_o  : out  STD_LOGIC_VECTOR (4 downto 0);
            GEN_RUN_o : out  STD_LOGIC;
            mem_wr_ack_i : in  STD_LOGIC;
-           D_mem_o : out  STD_LOGIC_VECTOR (13 downto 0);
+           D_mem_o : out  STD_LOGIC_VECTOR (11 downto 0);
            wr_addr_o : out  STD_LOGIC_VECTOR (14 downto 0);
            inc_rd_addr_o : out  STD_LOGIC_VECTOR (13 downto 0);
            max_rd_addr_o : out  STD_LOGIC_VECTOR (14 downto 0);
@@ -227,7 +227,7 @@ begin
 					end IF;
 				WHEN MEM_WRITE =>
 					smp_rdy_o <= '1';
-					D_mem_o <= temp_buf_2_bytes(13 downto 0);
+					D_mem_o <= temp_buf_2_bytes(13 downto 2);
 					IF (mem_wr_ack_i = '1') THEN
 						Sub_State <= inc_wr_addr;
 					ELSE
@@ -258,7 +258,7 @@ begin
 						wr_addr_s <= temp_buf_2_bytes(14 downto 0);
 					WHEN data_load_top =>
 						D_io_s <= x"81";
-						D_mem_o <= temp_buf_2_bytes(13 downto 0);
+						D_mem_o <= temp_buf_2_bytes(13 downto 2);
 					WHEN max_rd_addr_top =>	
 						D_io_s <= x"82";
 						max_rd_addr_o <= temp_buf_2_bytes(14 downto 0);

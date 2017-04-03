@@ -81,7 +81,7 @@ architecture Behavioral of Main_TOP is
 				  fdiv_o  : out  STD_LOGIC_VECTOR (4 downto 0);
 				  GEN_RUN_o : out  STD_LOGIC;
 				  mem_wr_ack_i : in  STD_LOGIC := '1';
-				  D_mem_o : out  STD_LOGIC_VECTOR (13 downto 0);
+				  D_mem_o : out  STD_LOGIC_VECTOR (11 downto 0);
 				  wr_addr_o : out  STD_LOGIC_VECTOR (14 downto 0);
 				  inc_rd_addr_o : out  STD_LOGIC_VECTOR (13 downto 0);
 				  max_rd_addr_o : out  STD_LOGIC_VECTOR (14 downto 0);
@@ -95,16 +95,16 @@ architecture Behavioral of Main_TOP is
 				  CLK_i : in  STD_LOGIC);
 	END COMPONENT;
 	COMPONENT BRAM_ctrlr is
-    PORT ( D_mem_i : in  STD_LOGIC_VECTOR (13 downto 0);
+    PORT ( D_mem_i : in  STD_LOGIC_VECTOR (11 downto 0);
            wr_addr_i : in  STD_LOGIC_VECTOR (14 downto 0);
 			  inc_rd_addr_i : in  std_logic_vector(13 downto 0);
 			  max_rd_addr_i : in  std_logic_vector(14 downto 0);
 			  fdiv_i  : in  STD_LOGIC_VECTOR (4 downto 0);
            smp_rdy_i : in  STD_LOGIC;
 			  GEN_RUN_i : in  STD_LOGIC;
-			  D_SRAM_i : in  STD_LOGIC_VECTOR (13 downto 0);
-			  D_SRAM_o : out  STD_LOGIC_VECTOR (13 downto 0);
-			  D_DAC_o : out  STD_LOGIC_VECTOR (13 downto 0);
+			  D_SRAM_i : in  STD_LOGIC_VECTOR (11 downto 0);
+			  D_SRAM_o : out  STD_LOGIC_VECTOR (11 downto 0);
+			  D_DAC_o : out  STD_LOGIC_VECTOR (11 downto 0);
 			  mem_wr_addr_o : out  STD_LOGIC_VECTOR (14 downto 0);
 			  mem_rd_addr_o : out  STD_LOGIC_VECTOR (14 downto 0);
 			  mem_wr_ack_o : out  STD_LOGIC;
@@ -119,15 +119,15 @@ architecture Behavioral of Main_TOP is
 		 clka : IN STD_LOGIC;
 		 wea : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
 		 addra : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
-		 dina : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
+		 dina : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
 		 clkb : IN STD_LOGIC;
 		 rstb : IN STD_LOGIC;
 		 addrb : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
-		 doutb : OUT STD_LOGIC_VECTOR(13 DOWNTO 0)
+		 doutb : OUT STD_LOGIC_VECTOR(11 DOWNTO 0)
 	  );
 	END COMPONENT;
 	COMPONENT DAC_Block is
-    PORT ( D_DAC_i : in  STD_LOGIC_VECTOR (13 downto 0);
+    PORT ( D_DAC_i : in  STD_LOGIC_VECTOR (11 downto 0);
 			  ATT_i : in STD_LOGIC_VECTOR (3 downto 0);
            D_o : out  STD_LOGIC_VECTOR (11 downto 0);
            RST_i : in  STD_LOGIC;
@@ -139,8 +139,9 @@ architecture Behavioral of Main_TOP is
 	signal D_io_s : std_logic_vector(7 downto 0);
 	signal wen_s : std_logic_vector (0 downto 0);
 	signal mem_wr_addr_s, wr_addr_s, max_rd_addr_s, mem_rd_addr_s : std_logic_vector (14 downto 0);
-	signal D_mem_s, D_SRAM_o_s, D_SRAM_i_s, inc_rd_addr_s: std_logic_vector (13 downto 0);
-	signal D_DAC_s: std_logic_vector (13 downto 0);
+	signal D_mem_s, D_SRAM_o_s, D_SRAM_i_s: std_logic_vector (11 downto 0);
+	signal inc_rd_addr_s: std_logic_vector (13 downto 0);
+	signal D_DAC_s: std_logic_vector (11 downto 0);
 	signal att_s : std_logic_vector(3 downto 0);
 	signal fdiv_s : std_logic_vector(4 downto 0);
 	signal DCM_CLK_s, clk_dac_s, clk_dac_o_s:std_logic;
@@ -250,7 +251,7 @@ BEGIN
 		);
 --LED_o <= wr_addr_s (11 downto 0) when (D_io_s = x"81") else (others=>'0');
 --LED_o <= mem_rd_addr_s (11 downto 0) when (D_io_s = x"84") else (others=>'0');
-DEBUG_o <= D_DAC_s(13 downto 2);--(others=>'1');--
+DEBUG_o <= D_DAC_s;--(others=>'1');--
 
 
 END Behavioral;

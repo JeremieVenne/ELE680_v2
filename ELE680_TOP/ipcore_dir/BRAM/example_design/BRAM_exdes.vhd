@@ -92,7 +92,7 @@ ENTITY BRAM_exdes IS
     WEA            : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     ADDRA          : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
   
-    DINA           : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
+    DINA           : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
   
     CLKA       : IN STD_LOGIC;
 
@@ -100,7 +100,7 @@ ENTITY BRAM_exdes IS
       --Inputs - Port B
     RSTB           : IN STD_LOGIC;  --opt port
     ADDRB          : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
-    DOUTB          : OUT STD_LOGIC_VECTOR(13 DOWNTO 0);
+    DOUTB          : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
     CLKB           : IN STD_LOGIC
 
   );
@@ -124,7 +124,7 @@ ARCHITECTURE xilinx OF BRAM_exdes IS
     WEA        : IN STD_LOGIC_VECTOR(0 DOWNTO 0);
     ADDRA      : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
   
-    DINA       : IN STD_LOGIC_VECTOR(13 DOWNTO 0);
+    DINA       : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
 
   
     CLKA       : IN STD_LOGIC;
@@ -133,7 +133,7 @@ ARCHITECTURE xilinx OF BRAM_exdes IS
       --Port B
     RSTB       : IN STD_LOGIC;  --opt port
     ADDRB      : IN STD_LOGIC_VECTOR(14 DOWNTO 0);
-    DOUTB      : OUT STD_LOGIC_VECTOR(13 DOWNTO 0);
+    DOUTB      : OUT STD_LOGIC_VECTOR(11 DOWNTO 0);
     CLKB       : IN STD_LOGIC
 
 

@@ -13,19 +13,12 @@ Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 at 200 ns(1), Instance /main_top_tb/uut/U2/ : Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/main_top_tb/uut/U4/U0/native_mem_module/mem_module/).
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: UUUUUUUUUUUUUUU, B read address: UUUUUUUUUUUUUUU
-
+# restart
 ISim P.20131013 (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -36,36 +29,13 @@ Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 at 200 ns(1), Instance /main_top_tb/uut/U2/ : Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/main_top_tb/uut/U4/U0/native_mem_module/mem_module/).
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: UUUUUUUUUUUUUUU, B read address: UUUUUUUUUUUUUUU
-
 # run 10.00us
-at 1767500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1770 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1772500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1775 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1777500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1780 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1782500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1785 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
+at 8391666 ps(7), Instance /main_top_tb/uut/U5/ : Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
 ISim P.20131013 (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -76,37 +46,13 @@ Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 at 200 ns(1), Instance /main_top_tb/uut/U2/ : Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/main_top_tb/uut/U4/U0/native_mem_module/mem_module/).
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: UUUUUUUUUUUUUUU, B read address: UUUUUUUUUUUUUUU
-
 # run 10.00us
-at 1332500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1335 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1337500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1340 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1342500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1345 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1347500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1350 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 9660 ns(7), Instance /main_top_tb/uut/U5/ : Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+at 8391666 ps(7), Instance /main_top_tb/uut/U5/ : Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
 ISim P.20131013 (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -117,37 +63,13 @@ Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 at 200 ns(1), Instance /main_top_tb/uut/U2/ : Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/main_top_tb/uut/U4/U0/native_mem_module/mem_module/).
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: UUUUUUUUUUUUUUU, B read address: UUUUUUUUUUUUUUU
-
 # run 10.00us
-at 1332500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1335 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1337500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1340 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1342500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1345 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1347500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1350 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 9660 ns(7), Instance /main_top_tb/uut/U5/ : Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+at 8391666 ps(7), Instance /main_top_tb/uut/U5/ : Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
 ISim P.20131013 (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -158,34 +80,28 @@ Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 at 200 ns(1), Instance /main_top_tb/uut/U2/ : Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/main_top_tb/uut/U4/U0/native_mem_module/mem_module/).
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
 at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
-at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: UUUUUUUUUUUUUUU, B read address: UUUUUUUUUUUUUUU
-
 # run 10.00us
-at 1332500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1335 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1337500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1340 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1342500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1345 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1347500 ps(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 1350 ns(7), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: blk_mem_gen_v7_3 WARNING: collision detected: A write address: 000000000000000, B read address: 000000000000000
-
-at 9660 ns(7), Instance /main_top_tb/uut/U5/ : Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+at 8391666 ps(7), Instance /main_top_tb/uut/U5/ : Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 200 ns(1), Instance /main_top_tb/uut/U2/ : Warning: NUMERIC_STD."<=": metavalue detected, returning FALSE
+at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 215 ns(9): Note: Block Memory Generator CORE Generator module is using a behavioral model FOR simulation which will not precisely model memory collision behavior. (/main_top_tb/uut/U4/U0/native_mem_module/mem_module/).
+at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+at 215 ns(9), Instance /main_top_tb/uut/U4/U0/native_mem_module/mem_module/ : Warning: CONV_INTEGER: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, and it has been converted to 0.
+# run 10.00us
+at 8391666 ps(7), Instance /main_top_tb/uut/U5/ : Warning: NUMERIC_STD.">=": metavalue detected, returning FALSE
+# exit 0

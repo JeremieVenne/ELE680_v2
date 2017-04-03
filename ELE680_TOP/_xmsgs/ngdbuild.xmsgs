@@ -6,11 +6,11 @@
      users do not edit the contents of this file. -->
 <messages>
 <msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">CLK_i</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_CLK_i</arg>&apos;, was traced into <arg fmt="%s" index="4">PLL_ADV</arg> instance <arg fmt="%s" index="5">PLL_ADV</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLL_ADV</arg> output(s): 
-<arg fmt="%s" index="7">CLKOUT1</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_U1_clkout1 = PERIOD &quot;U1_clkout1&quot; TS_CLK_i / 2 PHASE 2500 ps HIGH 50%&gt;</arg>
+<arg fmt="%s" index="7">CLKOUT1</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_U1_clkout1 = PERIOD &quot;U1_clkout1&quot; TS_CLK_i / 3 PHASE 1666.666666667 ps HIGH 50%&gt;</arg>
 </msg>
 
 <msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">CLK_i</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_CLK_i</arg>&apos;, was traced into <arg fmt="%s" index="4">PLL_ADV</arg> instance <arg fmt="%s" index="5">PLL_ADV</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLL_ADV</arg> output(s): 
-<arg fmt="%s" index="7">CLKOUT0</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_U1_clkout0 = PERIOD &quot;U1_clkout0&quot; TS_CLK_i / 2 HIGH 50%&gt;</arg>
+<arg fmt="%s" index="7">CLKOUT0</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_U1_clkout0 = PERIOD &quot;U1_clkout0&quot; TS_CLK_i / 3 HIGH 50%&gt;</arg>
 </msg>
 
 </messages>

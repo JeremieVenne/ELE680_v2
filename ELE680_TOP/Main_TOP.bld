@@ -18,13 +18,13 @@ Checking Constraint Associations...
 INFO:ConstraintSystem:178 - TNM 'CLK_i', used in period specification
    'TS_CLK_i', was traced into PLL_ADV instance PLL_ADV. The following new TNM
    groups and period specifications were generated at the PLL_ADV output(s): 
-   CLKOUT1: <TIMESPEC TS_U1_clkout1 = PERIOD "U1_clkout1" TS_CLK_i / 2 PHASE
-   2500 ps HIGH 50%>
+   CLKOUT1: <TIMESPEC TS_U1_clkout1 = PERIOD "U1_clkout1" TS_CLK_i / 3 PHASE
+   1666.666666667 ps HIGH 50%>
 
 INFO:ConstraintSystem:178 - TNM 'CLK_i', used in period specification
    'TS_CLK_i', was traced into PLL_ADV instance PLL_ADV. The following new TNM
    groups and period specifications were generated at the PLL_ADV output(s): 
-   CLKOUT0: <TIMESPEC TS_U1_clkout0 = PERIOD "U1_clkout0" TS_CLK_i / 2 HIGH 50%>
+   CLKOUT0: <TIMESPEC TS_U1_clkout0 = PERIOD "U1_clkout0" TS_CLK_i / 3 HIGH 50%>
 
 Done...
 
@@ -41,10 +41,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 408216 kilobytes
+Total memory usage is 407780 kilobytes
 
 Writing NGD file "Main_TOP.ngd" ...
-Total REAL time to NGDBUILD completion:  3 sec
-Total CPU time to NGDBUILD completion:   3 sec
+Total REAL time to NGDBUILD completion:  4 sec
+Total CPU time to NGDBUILD completion:   4 sec
 
 Writing NGDBUILD log file "Main_TOP.bld"...

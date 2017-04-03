@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> 
 Reading design: Main_TOP.prj
@@ -116,12 +116,12 @@ Cores Search Directories           : {"ipcore_dir"  }
 Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/ipcore_dir/DCM_block.vhd" into library work
 Parsing entity <DCM_block>.
 Parsing architecture <xilinx> of entity <dcm_block>.
-Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_ctrlr.vhd" into library work
-Parsing entity <Main_ctrlr>.
-Parsing architecture <Behavioral> of entity <main_ctrlr>.
 Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/ipcore_dir/BRAM.vhd" into library work
 Parsing entity <BRAM>.
 Parsing architecture <BRAM_a> of entity <bram>.
+Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_ctrlr.vhd" into library work
+Parsing entity <Main_ctrlr>.
+Parsing architecture <Behavioral> of entity <main_ctrlr>.
 Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/FTDI_Block.vhd" into library work
 Parsing entity <FTDI_Block>.
 Parsing architecture <Behavioral> of entity <ftdi_block>.
@@ -134,10 +134,10 @@ Parsing architecture <Behavioral> of entity <bram_ctrlr>.
 Parsing VHDL file "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" into library work
 Parsing entity <Main_TOP>.
 Parsing architecture <Behavioral> of entity <main_top>.
-WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" Line 158: Actual for formal port c1 is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" Line 162: Actual for formal port r is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" Line 173: Actual for formal port reset is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" Line 219: Actual for formal port rstb is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" Line 159: Actual for formal port c1 is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" Line 163: Actual for formal port r is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" Line 174: Actual for formal port reset is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" Line 220: Actual for formal port rstb is neither a static name nor a globally static expression
 
 =========================================================================
 *                            HDL Elaboration                            *
@@ -166,7 +166,7 @@ Elaborating entity <DAC_Block> (architecture <Behavioral>) from library <work>.
 Synthesizing Unit <Main_TOP>.
     Related source file is "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd".
         clk_period = 5
-INFO:Xst:3210 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" line 165: Output port <LOCKED> of the instance <U1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/Main_TOP.vhd" line 166: Output port <LOCKED> of the instance <U1> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <Main_TOP> synthesized.
@@ -266,7 +266,7 @@ Synthesizing Unit <Main_ctrlr>.
     Found 1-bit register for signal <ft_wr_en_o>.
     Found 8-bit register for signal <D_io_s>.
     Found 8-bit register for signal <nb_byte>.
-    Found 14-bit register for signal <D_mem_o>.
+    Found 12-bit register for signal <D_mem_o>.
     Found 15-bit register for signal <wr_addr_s>.
     Found 15-bit register for signal <max_rd_addr_o>.
     Found 1-bit register for signal <GEN_RUN_s>.
@@ -315,7 +315,7 @@ INFO:Xst:1799 - State error is never reached in FSM <Top_State>.
     Found 1-bit tristate buffer for signal <D_io<0>> created at line 288
     Summary:
 	inferred   2 Adder/Subtractor(s).
-	inferred 104 D-type flip-flop(s).
+	inferred 102 D-type flip-flop(s).
 	inferred  25 Multiplexer(s).
 	inferred   8 Tristate(s).
 	inferred   2 Finite State Machine(s).
@@ -327,8 +327,8 @@ Synthesizing Unit <BRAM_ctrlr>.
     Found 1-bit register for signal <mem_wr_ack_s>.
     Found 1-bit register for signal <wr_en_s>.
     Found 15-bit register for signal <wr_addr_s>.
-    Found 14-bit register for signal <D_SRAM_o_s>.
-    Found 14-bit register for signal <D_DAC_s>.
+    Found 12-bit register for signal <D_SRAM_o_s>.
+    Found 12-bit register for signal <D_DAC_s>.
     Found 16-bit register for signal <read_addr_s>.
     Found 5-bit register for signal <fdiv_cnt_s>.
     Found 2-bit register for signal <mem_read_state>.
@@ -371,7 +371,7 @@ INFO:Xst:1799 - State sram_to_dac_2 is never reached in FSM <mem_read_state>.
     Found 16-bit comparator lessequal for signal <n0015> created at line 119
     Summary:
 	inferred   4 Adder/Subtractor(s).
-	inferred  99 D-type flip-flop(s).
+	inferred  95 D-type flip-flop(s).
 	inferred   2 Comparator(s).
 	inferred   6 Multiplexer(s).
 	inferred   2 Finite State Machine(s).
@@ -379,11 +379,12 @@ Unit <BRAM_ctrlr> synthesized.
 
 Synthesizing Unit <DAC_Block>.
     Related source file is "/home/f3nr1r/Documents/Workspace/Xilinx/ELE680_v2/ELE680_TOP/DAC_Block.vhd".
-WARNING:Xst:647 - Input <D_DAC_i<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 12-bit register for signal <D_DAC_s>.
-    Found 12-bit 13-to-1 multiplexer for signal <ATT_i[3]_GND_39_o_wide_mux_0_OUT> created at line 49.
+    Found 4-bit register for signal <att_s>.
+    Found 12-bit register for signal <D_DAC_s2>.
+    Found 12-bit register for signal <D_DAC_s1>.
+    Found 12-bit 13-to-1 multiplexer for signal <att_s[3]_GND_39_o_wide_mux_0_OUT> created at line 52.
     Summary:
-	inferred  12 D-type flip-flop(s).
+	inferred  28 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
 Unit <DAC_Block> synthesized.
 
@@ -399,13 +400,13 @@ Macro Statistics
  5-bit adder                                           : 1
  8-bit adder                                           : 1
  8-bit addsub                                          : 1
-# Registers                                            : 31
+# Registers                                            : 33
  1-bit register                                        : 12
- 12-bit register                                       : 1
- 14-bit register                                       : 4
+ 12-bit register                                       : 5
+ 14-bit register                                       : 1
  15-bit register                                       : 3
  16-bit register                                       : 4
- 4-bit register                                        : 1
+ 4-bit register                                        : 2
  5-bit register                                        : 2
  8-bit register                                        : 4
 # Comparators                                          : 9
@@ -417,7 +418,7 @@ Macro Statistics
  1-bit 2-to-1 multiplexer                              : 21
  1-bit 4-to-1 multiplexer                              : 2
  12-bit 13-to-1 multiplexer                            : 1
- 14-bit 2-to-1 multiplexer                             : 1
+ 12-bit 2-to-1 multiplexer                             : 1
  15-bit 2-to-1 multiplexer                             : 2
  16-bit 2-to-1 multiplexer                             : 5
  5-bit 2-to-1 multiplexer                              : 2
@@ -436,8 +437,6 @@ INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmet
 
 Reading core <ipcore_dir/BRAM.ngc>.
 Loading core <BRAM> for timing and area information for instance <U4>.
-WARNING:Xst:2677 - Node <D_DAC_s_0> of sequential type is unconnected in block <U5>.
-WARNING:Xst:2677 - Node <D_DAC_s_1> of sequential type is unconnected in block <U5>.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -451,8 +450,8 @@ Macro Statistics
  5-bit adder                                           : 1
  8-bit adder                                           : 1
  8-bit addsub                                          : 1
-# Registers                                            : 235
- Flip-Flops                                            : 235
+# Registers                                            : 245
+ Flip-Flops                                            : 245
 # Comparators                                          : 9
  16-bit comparator lessequal                           : 1
  5-bit comparator equal                                : 1
@@ -462,7 +461,7 @@ Macro Statistics
  1-bit 2-to-1 multiplexer                              : 45
  1-bit 4-to-1 multiplexer                              : 2
  12-bit 13-to-1 multiplexer                            : 1
- 14-bit 2-to-1 multiplexer                             : 1
+ 12-bit 2-to-1 multiplexer                             : 1
  15-bit 2-to-1 multiplexer                             : 2
  16-bit 2-to-1 multiplexer                             : 4
  5-bit 2-to-1 multiplexer                              : 2
@@ -559,8 +558,6 @@ Optimizing unit <Main_TOP> ...
 Optimizing unit <BRAM_ctrlr> ...
 
 Optimizing unit <DAC_Block> ...
-WARNING:Xst:2677 - Node <U5/D_DAC_s_1> of sequential type is unconnected in block <Main_TOP>.
-WARNING:Xst:2677 - Node <U5/D_DAC_s_0> of sequential type is unconnected in block <Main_TOP>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -584,8 +581,6 @@ Replicating register U2/D_io_s_3 to handle IOB=TRUE attribute
 Replicating register U2/D_io_s_2 to handle IOB=TRUE attribute
 Replicating register U2/D_io_s_1 to handle IOB=TRUE attribute
 Replicating register U2/D_io_s_0 to handle IOB=TRUE attribute
-Replicating register U5/D_DAC_s_13 to handle IOB=TRUE attribute
-Replicating register U5/D_DAC_s_12 to handle IOB=TRUE attribute
 Replicating register U5/D_DAC_s_11 to handle IOB=TRUE attribute
 Replicating register U5/D_DAC_s_10 to handle IOB=TRUE attribute
 Replicating register U5/D_DAC_s_9 to handle IOB=TRUE attribute
@@ -596,6 +591,8 @@ Replicating register U5/D_DAC_s_5 to handle IOB=TRUE attribute
 Replicating register U5/D_DAC_s_4 to handle IOB=TRUE attribute
 Replicating register U5/D_DAC_s_3 to handle IOB=TRUE attribute
 Replicating register U5/D_DAC_s_2 to handle IOB=TRUE attribute
+Replicating register U5/D_DAC_s_1 to handle IOB=TRUE attribute
+Replicating register U5/D_DAC_s_0 to handle IOB=TRUE attribute
 Replicating register U2/RD_o to handle IOB=TRUE attribute
 Replicating register U2/WR_o to handle IOB=TRUE attribute
 
@@ -608,8 +605,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 303
- Flip-Flops                                            : 303
+# Registers                                            : 315
+ Flip-Flops                                            : 315
 
 =========================================================================
 
@@ -632,12 +629,12 @@ Top Level Output File Name         : Main_TOP.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 577
+# BELS                             : 575
 #      GND                         : 2
 #      INV                         : 7
 #      LUT1                        : 29
 #      LUT2                        : 30
-#      LUT3                        : 73
+#      LUT3                        : 71
 #      LUT4                        : 99
 #      LUT5                        : 51
 #      LUT6                        : 123
@@ -646,14 +643,14 @@ Primitive and Black Box Usage:
 #      MUXF8                       : 9
 #      VCC                         : 2
 #      XORCY                       : 63
-# FlipFlops/Latches                : 336
+# FlipFlops/Latches                : 332
 #      FD                          : 16
-#      FDE                         : 262
+#      FDE                         : 274
 #      FDR                         : 29
-#      FDRE                        : 28
+#      FDRE                        : 12
 #      ODDR2                       : 1
-# RAMS                             : 26
-#      RAMB16BWER                  : 26
+# RAMS                             : 22
+#      RAMB16BWER                  : 22
 # Clock Buffers                    : 3
 #      BUFG                        : 3
 # IO Buffers                       : 39
@@ -671,16 +668,16 @@ Selected Device : 6slx9tqg144-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             302  out of  11440     2%  
- Number of Slice LUTs:                  412  out of   5720     7%  
-    Number used as Logic:               412  out of   5720     7%  
+ Number of Slice Registers:             298  out of  11440     2%  
+ Number of Slice LUTs:                  410  out of   5720     7%  
+    Number used as Logic:               410  out of   5720     7%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    537
-   Number with an unused Flip Flop:     235  out of    537    43%  
-   Number with an unused LUT:           125  out of    537    23%  
-   Number of fully used LUT-FF pairs:   177  out of    537    32%  
-   Number of unique control sets:        21
+ Number of LUT Flip Flop pairs used:    533
+   Number with an unused Flip Flop:     235  out of    533    44%  
+   Number with an unused LUT:           123  out of    533    23%  
+   Number of fully used LUT-FF pairs:   175  out of    533    32%  
+   Number of unique control sets:        20
 
 IO Utilization: 
  Number of IOs:                          39
@@ -688,8 +685,8 @@ IO Utilization:
     IOB Flip Flops/Latches:              34
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:               26  out of     32    81%  
-    Number using Block RAM only:         26
+ Number of Block RAM/FIFO:               22  out of     32    68%  
+    Number using Block RAM only:         22
  Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
  Number of PLL_ADVs:                      1  out of      2    50%  
 
@@ -715,7 +712,7 @@ Clock Information:
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
 U1/pll_base_inst/CLKOUT1           | BUFG                   | 2     |
-U1/pll_base_inst/CLKOUT0           | BUFG                   | 361   |
+U1/pll_base_inst/CLKOUT0           | BUFG                   | 353   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -727,9 +724,9 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 5.406ns (Maximum Frequency: 184.983MHz)
-   Minimum input arrival time before clock: 6.758ns
+   Minimum input arrival time before clock: 6.863ns
    Maximum output required time after clock: 6.366ns
-   Maximum combinational path delay: 7.402ns
+   Maximum combinational path delay: 7.508ns
 
 Timing Details:
 ---------------
@@ -738,7 +735,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'U1/pll_base_inst/CLKOUT0'
   Clock period: 5.406ns (frequency: 184.983MHz)
-  Total number of paths / destination ports: 19550 / 1506
+  Total number of paths / destination ports: 19362 / 1358
 -------------------------------------------------------------------------
 Delay:               5.406ns (Levels of Logic = 5)
   Source:            U2/counter_s_2 (FF)
@@ -765,7 +762,7 @@ Delay:               5.406ns (Levels of Logic = 5)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'U1/pll_base_inst/CLKOUT1'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              4.503ns (Levels of Logic = 2)
+Offset:              4.580ns (Levels of Logic = 2)
   Source:            RST_i (PAD)
   Destination:       ODDR2_inst (FF)
   Destination Clock: U1/pll_base_inst/CLKOUT1 rising
@@ -774,18 +771,18 @@ Offset:              4.503ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            60   1.222   1.613  RST_i_IBUF (RST_i_IBUF)
-     INV:I->O             44   0.206   1.462  RST_i_INV_4_o1_INV_0 (RST_i_INV_4_o)
+     IBUF:I->O            76   1.222   1.718  RST_i_IBUF (RST_i_IBUF)
+     INV:I->O             42   0.206   1.433  RST_i_INV_4_o1_INV_0 (RST_i_INV_4_o)
      ODDR2:R                   0.000          ODDR2_inst
     ----------------------------------------
-    Total                      4.503ns (1.428ns logic, 3.075ns route)
-                                       (31.7% logic, 68.3% route)
+    Total                      4.580ns (1.428ns logic, 3.152ns route)
+                                       (31.2% logic, 68.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'U1/pll_base_inst/CLKOUT0'
-  Total number of paths / destination ports: 591 / 380
+  Total number of paths / destination ports: 601 / 390
 -------------------------------------------------------------------------
-Offset:              6.758ns (Levels of Logic = 5)
+Offset:              6.863ns (Levels of Logic = 5)
   Source:            RST_i (PAD)
   Destination:       U3/Top_State_FSM_FFd1 (FF)
   Destination Clock: U1/pll_base_inst/CLKOUT0 rising
@@ -794,15 +791,15 @@ Offset:              6.758ns (Levels of Logic = 5)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            60   1.222   1.842  RST_i_IBUF (RST_i_IBUF)
+     IBUF:I->O            76   1.222   1.947  RST_i_IBUF (RST_i_IBUF)
      LUT3:I0->O           16   0.205   1.005  D_io_s<0>LogicTrst11 (D_io_s<0>LogicTrst1)
      LUT6:I5->O            7   0.205   1.118  D_io_s<7>LogicTrst1 (D_io_s<7>)
      LUT6:I1->O            3   0.203   0.651  U3/_n0455_inv1 (U3/_n0455_inv1)
      LUT6:I5->O            1   0.205   0.000  U3/Top_State_FSM_FFd2-In1 (U3/Top_State_FSM_FFd2-In)
      FDR:D                     0.102          U3/Top_State_FSM_FFd2
     ----------------------------------------
-    Total                      6.758ns (2.142ns logic, 4.616ns route)
-                                       (31.7% logic, 68.3% route)
+    Total                      6.863ns (2.142ns logic, 4.721ns route)
+                                       (31.2% logic, 68.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'U1/pll_base_inst/CLKOUT0'
@@ -829,7 +826,7 @@ Offset:              6.366ns (Levels of Logic = 3)
 Timing constraint: Default path analysis
   Total number of paths / destination ports: 8 / 8
 -------------------------------------------------------------------------
-Delay:               7.402ns (Levels of Logic = 4)
+Delay:               7.508ns (Levels of Logic = 4)
   Source:            RST_i (PAD)
   Destination:       D_ft_io<7> (PAD)
 
@@ -837,13 +834,13 @@ Delay:               7.402ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            60   1.222   1.718  RST_i_IBUF (RST_i_IBUF)
+     IBUF:I->O            76   1.222   1.823  RST_i_IBUF (RST_i_IBUF)
      LUT4:I2->O            1   0.203   0.684  U2/GND_11_o_counter_s[7]_AND_7_o_inv_SW0 (N12)
      LUT6:I4->O            8   0.203   0.802  U2/GND_11_o_counter_s[7]_AND_7_o_inv (U2/GND_11_o_counter_s[7]_AND_7_o_inv)
      IOBUF:T->IO               2.571          D_ft_io_7_IOBUF (D_ft_io<7>)
     ----------------------------------------
-    Total                      7.402ns (4.199ns logic, 3.203ns route)
-                                       (56.7% logic, 43.3% route)
+    Total                      7.508ns (4.199ns logic, 3.309ns route)
+                                       (55.9% logic, 44.1% route)
 
 =========================================================================
 
@@ -861,15 +858,15 @@ U1/pll_base_inst/CLKOUT0|    5.406|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 10.97 secs
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 17.04 secs
  
 --> 
 
 
-Total memory usage is 409060 kilobytes
+Total memory usage is 408820 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   14 (   0 filtered)
+Number of warnings :    9 (   0 filtered)
 Number of infos    :    7 (   0 filtered)
 

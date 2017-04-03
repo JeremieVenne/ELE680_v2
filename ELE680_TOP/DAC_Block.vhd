@@ -30,7 +30,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity DAC_Block is
-    Port ( D_DAC_i : in  STD_LOGIC_VECTOR (13 downto 0);
+    Port ( D_DAC_i : in  STD_LOGIC_VECTOR (11 downto 0);
 			  ATT_i : in STD_LOGIC_VECTOR (3 downto 0);
            D_o : out  STD_LOGIC_VECTOR (11 downto 0);
            RST_i : in  STD_LOGIC;
@@ -38,45 +38,48 @@ entity DAC_Block is
 end DAC_Block;
 
 architecture Behavioral of DAC_Block is
-signal D_DAC_s : std_logic_vector (11 downto 0);
+signal D_DAC_s1, D_DAC_s2 : std_logic_vector (11 downto 0);
+signal att_s : std_logic_vector(3 downto 0);
 begin
 process(CLK_i)
 begin
 	IF(rising_edge(CLK_i)) THEN
 		IF (RST_i = '0') THEN
-			D_DAC_s <= (others=>'0');
+			D_DAC_s1 <= (others=>'0');
 		ELSE
-			CASE ATT_i IS
+			att_s <= ATT_i;
+			D_DAC_s1 <= D_DAC_i; 
+			CASE att_s IS
 				WHEN x"0"=>
-					D_DAC_s <= D_DAC_i(13 downto 2);
+					D_DAC_s2 <= D_DAC_s1;
 				WHEN x"1"=>
-					D_DAC_s <= "0" & D_DAC_i(13 downto 3);
+					D_DAC_s2 <= "0" & D_DAC_s1(11 downto 1);
 				WHEN x"2"=>
-					D_DAC_s <= "00" & D_DAC_i(13 downto 4);
+					D_DAC_s2 <= "00" & D_DAC_s1(11 downto 2);
 				WHEN x"3"=>
-					D_DAC_s <= "000" & D_DAC_i(13 downto 5);
+					D_DAC_s2 <= "000" & D_DAC_s1(11 downto 3);
 				WHEN x"4"=>
-					D_DAC_s <= "0000" & D_DAC_i(13 downto 6);
+					D_DAC_s2 <= "0000" & D_DAC_s1(11 downto 4);
 				WHEN x"5"=>
-					D_DAC_s <= "00000" & D_DAC_i(13 downto 7);
+					D_DAC_s2 <= "00000" & D_DAC_s1(11 downto 5);
 				WHEN x"6"=>
-					D_DAC_s <= "000000" & D_DAC_i(13 downto 8);
+					D_DAC_s2 <= "000000" & D_DAC_s1(11 downto 6);
 				WHEN x"7"=>
-					D_DAC_s <= "0000000" & D_DAC_i(13 downto 9);
+					D_DAC_s2 <= "0000000" & D_DAC_s1(11 downto 7);
 				WHEN x"8"=>
-					D_DAC_s <= "00000000" & D_DAC_i(13 downto 10);
+					D_DAC_s2 <= "00000000" & D_DAC_s1(11 downto 8);
 				WHEN x"9"=>
-					D_DAC_s <= "000000000" & D_DAC_i(13 downto 11);
+					D_DAC_s2 <= "000000000" & D_DAC_s1(11 downto 9);
 				WHEN x"A"=>
-					D_DAC_s <= "0000000000" & D_DAC_i(13 downto 12);
+					D_DAC_s2 <= "0000000000" & D_DAC_s1(11 downto 10);
 				WHEN x"B"=>
-					D_DAC_s <= "00000000000" & D_DAC_i(13 downto 13);
+					D_DAC_s2 <= "00000000000" & D_DAC_s1(11 downto 11);
 				WHEN others=>
-					D_DAC_s <= (others=>'0');		
+					D_DAC_s2 <= (others=>'0');		
 			end CASE;
 		END IF;
 	END IF;
 end process;
-D_o <= D_DAC_s;
+D_o <= D_DAC_s2;
 end Behavioral;
 
